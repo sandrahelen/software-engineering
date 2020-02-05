@@ -1,5 +1,2 @@
 # 48
-
-Oscar
-
-Fredrik
+Sandra
