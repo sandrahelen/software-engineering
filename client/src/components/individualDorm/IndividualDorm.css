@@ -1,0 +1,10 @@
+.dormBody {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.list {
+    color: 'red';
+    font-size: 40;
+}
