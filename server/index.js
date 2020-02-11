@@ -11,7 +11,7 @@ const port = 5000;
 
 //connect to the database
 //TODO Add mongoose link in .env file
-mongoose.connect('mongodb+srv://Test:SeSFRTYDsPaXdHEV@pu48-e21uc.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true })
+mongoose.connect('mongodb+srv://fredrik:12345@pu48-e21uc.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log(`Database connected successfully`))
     .catch(err => console.log(err));
 
