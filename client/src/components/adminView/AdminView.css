@@ -9,4 +9,8 @@
     color: white;
   }
   
+  .dormList {
+    list-style-type: none;
+    cursor: pointer;
+  }
   
