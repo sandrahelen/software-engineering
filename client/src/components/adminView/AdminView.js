@@ -18,16 +18,6 @@ const AdminView = () => {
         console.log(error);
       })
     },[]);
-    const dummyDorms = [
-        {
-            roomNumber: 1,
-            members: ['magnus', 'fredrik']
-        },
-        {
-            roomNumber: 2,
-            members: ['Hans', 'Magne']
-        }
-    ];
     return (
         <div className="adminView">
             <div className="header">
@@ -35,12 +25,10 @@ const AdminView = () => {
             </div>
             <div className="body">
                 <ul className="dormList">
-                    {dummyDorms.map(dorm =>
-                        <li key={dorm.roomNumber}><IndividualDorm dorm={dorm} /></li>)}
                     {dorms.map(dorm =>
-                        <li key={dorm.id}>{dorm.nummer}</li>)}
+                        <li key={dorm.id}><IndividualDorm dorm={dorm} /></li>)}
+    
                 </ul>
-
             </div>
         </div>
     )

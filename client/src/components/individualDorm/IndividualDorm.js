@@ -3,15 +3,16 @@ import './IndividualDorm.css';
 
 const IndividualDorm = ({ dorm }) => {
     const approve = () => {
-        alert("Kollektiv er godkjent")
+        alert("Kollektiv er")
     }
+    console.log(dorm)
     return (
         <div className="dormBody">
-            <p>Romnummer: {dorm.roomNumber}</p>
+            <p>Romnummer: {dorm.kollektivnummer}</p>
             <p>Medlemmer</p>
             <div>
                 <ul className="memberList">
-                    {dorm.members.map(member => <li>{member}</li>)}
+                    {dorm.medlemmer.map(member => <li>{member}</li>)}
                 </ul>
             </div>
             <button
