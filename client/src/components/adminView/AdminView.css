@@ -8,9 +8,10 @@
     font-size: calc(10px + 2vmin);
     color: white;
   }
-  
+
   .dormList {
     list-style-type: none;
     cursor: pointer;
+    align-items: center;
   }
   

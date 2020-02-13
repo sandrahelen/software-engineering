@@ -1,0 +1,14 @@
+.dropDownMenu {
+
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+button {
+    padding: 15px;
+    font-size: 15px;
+
+}
