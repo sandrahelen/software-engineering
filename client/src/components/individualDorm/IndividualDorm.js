@@ -3,7 +3,7 @@ import './IndividualDorm.css';
 
 const IndividualDorm = ({ dorm }) => {
     const approve = () => {
-        alert("Kollektiv er")
+        alert("Kollektivet er godkjent")
     }
     console.log(dorm)
     return (
