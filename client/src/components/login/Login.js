@@ -28,8 +28,7 @@ export default function Login() {
         const lookup = 'http://localhost:5000/api/user/username/' + username;
         axios.get(lookup).then(response =>{
             if (response.data.length === 0) {
-                console.log("no user");
-                return 0;
+                alert("No user");
             }
             else {
                 let match = (response.data[0].password === password);
@@ -38,11 +37,9 @@ export default function Login() {
                     let x = document.getElementsByClassName("App");      
                     ReactDOM.render(<AdminView />, x[0]);
                 } else if(match) {
-                    console.log("password match no admin");
-                    return 1
+                    alert("not admin");
                 } else {
-                    console.log("no password match");
-                    return 0
+                    alert("password no match");
                 };
             }
         });
