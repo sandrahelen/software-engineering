@@ -1,20 +1,16 @@
 import React from 'react';
 import './IndividualDorm.css';
+import DropDownMenu from '../dropDownMenu/DropDownMenu';
 
 const IndividualDorm = ({ dorm }) => {
     const approve = () => {
         alert("Kollektivet er godkjent")
     }
-    console.log(dorm)
+    
     return (
         <div className="dormBody">
             <p>Romnummer: {dorm.kollektivnummer}</p>
-            <p>Medlemmer</p>
-            <div>
-                <ul className="memberList">
-                    {dorm.medlemmer.map(member => <li>{member}</li>)}
-                </ul>
-            </div>
+            <DropDownMenu dormMembers={dorm.medlemmer} />
             <button
                 onClick={() => approve()}
                 className="approveButton">

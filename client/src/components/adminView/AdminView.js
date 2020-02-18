@@ -5,6 +5,8 @@ import './AdminView.css';
 
 const AdminView = () => {
     const [dorms, setDorms] = useState([]);
+    const [show, setShow] = useState(false);
+
 
     useEffect(()=> {
         axios.get('http://localhost:5000/api/kollektiv')
@@ -30,6 +32,13 @@ const AdminView = () => {
     
                 </ul>
             </div>
+            <span className="add-project__plus">+</span>
+            <span
+                className="add-project__text"
+                onClick={() => setShow(!show)}
+            >
+                Add project
+            </span>
         </div>
     )
 }
