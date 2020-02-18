@@ -1,17 +1,19 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const routes = require('./routes/api');
+const kollektivRoute = require('./routes/kollektiv');
+const studentbyRoute = require('./routes/studentby');
+const userRoute = require('./routes/user');
 const path = require('path');
 require('dotenv').config();
 
 const app = express();
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 
-//connect to the database
+
 //TODO Add mongoose link in .env file
-mongoose.connect('mongodb+srv://Test:SeSFRTYDsPaXdHEV@pu48-e21uc.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true })
+mongoose.connect('mongodb+srv://fredrik:12345@pu48-e21uc.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log(`Database connected successfully`))
     .catch(err => console.log(err));
 
@@ -26,7 +28,9 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.json());
 
-app.use('/api', routes);
+app.use('/api/kollektiv', kollektivRoute);
+app.use('/api/studentby', studentbyRoute);
+app.use('/api/user', userRoute);
 
 app.use((err, req, res, next) => {
     console.log(err);

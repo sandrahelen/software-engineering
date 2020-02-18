@@ -1,12 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
+import Routes from './components/Routes';
+import { Route} from 'react-router-dom';
+import AdminView from './components/adminView/AdminView';
 import './App.css';
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-          Hallo World
-      </header>
+      <Routes />
     </div>
   );
 }
