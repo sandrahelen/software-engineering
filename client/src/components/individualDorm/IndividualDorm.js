@@ -4,7 +4,7 @@ import DropDownMenu from '../dropDownMenu/DropDownMenu';
 
 const IndividualDorm = ({ dorm }) => {
     const approve = () => {
-        alert("Kollektiv er")
+        alert("Kollektivet er godkjent")
     }
     
     return (
