@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const StudentbySchema = new Schema({
     navn: {type: String, required: true},
-    kollektiv: {type: Array(Schema.Types.ObjectId), ref: "Kollektiv"},
+    kollektiv: {type: Array(Schema.Types.ObjectId), ref: "Kollektiv", required: true},
     vaktmester: {type: String, required: true}
 })
 

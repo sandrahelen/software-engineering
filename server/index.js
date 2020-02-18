@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const kollektivRoute = require('./routes/kollektiv');
 const studentbyRoute = require('./routes/studentby');
 const userRoute = require('./routes/user');
+const vaskelisteRoute = require('./routes/vaskeliste');
 const path = require('path');
 require('dotenv').config();
 
@@ -31,6 +32,7 @@ app.use(bodyParser.json());
 app.use('/api/kollektiv', kollektivRoute);
 app.use('/api/studentby', studentbyRoute);
 app.use('/api/user', userRoute);
+app.use('/api/vaskeliste', vaskelisteRoute);
 
 app.use((err, req, res, next) => {
     console.log(err);
