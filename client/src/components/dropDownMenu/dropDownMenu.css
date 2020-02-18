@@ -5,10 +5,15 @@
 .menu {
     display: flex;
     flex-direction: column;
-    background-color: white;
+    text-align: center;
+}
+.menuItem {
 }
 button {
     padding: 15px;
     font-size: 15px;
-
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
+

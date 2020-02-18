@@ -15,3 +15,14 @@
     align-items: center;
   }
   
+
+  .add-project__plus {
+    color:white;
+    font-size: 18px;
+  }
+  
+  .add-project__text {
+    display: inline-block;
+    color: white;
+    font-size: 18px;
+  }

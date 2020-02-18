@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FaChevronDown } from 'react-icons/fa';
+
 import './dropDownMenu.css';
 
 const DropDownMenu = ({ dormMembers }) => {
@@ -13,20 +15,23 @@ const DropDownMenu = ({ dormMembers }) => {
         setViewMenu(false);
         document.removeEventListener('click', closeMenu)
     }
-    
+
     return (
         <div>
-            <button 
+            <button
                 onClick={showMenu}
                 className="dropDownButton"
             >
-                Medlemmer
+                <p>
+                    Medlemmer
+                </p>
+                <FaChevronDown />
             </button>
             {
                 viewMenu &&
                 <div className="menu">
                     {
-                        dormMembers.map(dormMember => <button>{dormMember}</button>)
+                        dormMembers.map(dormMember => <button className="menuItem">{dormMember}</button>)
                     }
                 </div>
             }
