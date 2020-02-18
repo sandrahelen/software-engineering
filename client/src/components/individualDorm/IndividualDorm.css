@@ -1,0 +1,31 @@
+.dormBody {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 75vw;
+
+}
+
+.memberList {
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.approveButton {
+    border: 1px solid transparent;
+    color: whitesmoke;
+    margin-right: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 13px !important;
+    line-height: 17px;
+    padding: 6px 12px 7px 12px;
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+    border-radius: 3px !important;
+    text-decoration: none !important;
+    text-align: center;
+    cursor: pointer;
+    background-color: green;
+}
