@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./FrontPage.css";
+import { Link } from "react-router-dom";
 
 class FrontPage extends Component {
   styles = {
@@ -9,14 +10,7 @@ class FrontPage extends Component {
   state = {
     count: 0
   };
-  constructor() {
-    super();
-    this.handleIncrement = this.handleIncrement.bind(this);
-  }
 
-  handleIncrement() {
-    console.log("Increment Clicked", this);
-  }
   render() {
     return (
       <div className="FrontPage">
@@ -27,21 +21,11 @@ class FrontPage extends Component {
         <button style={this.styles} className="btn btn-secondary btn-sm m-2">
           Log in i mittkollektiv
         </button>
-        <button
-          onClick={this.handleIncrement}
-          style={this.styles}
-          className="btn btn-secondary btn-sm"
-        >
-          Log in som admin
-        </button>
+        <Link to="LoginPage">
+          <button>Log in som admin</button>
+        </Link>
       </div>
     );
-  }
-
-  buttonClasses() {
-    let classes = "badge m-2 badge-";
-    classes += this.state.count === 0 ? "warning" : "primary";
-    return classes;
   }
 }
 
