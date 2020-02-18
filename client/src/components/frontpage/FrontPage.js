@@ -9,21 +9,18 @@ class FrontPage extends Component {
       <div className="FrontPage">
         <header className="FrontPage-header">
         <img src={logo} style={ { height: 200, width: 200 } } className="FrontPage-logo" alt="logo" />
-          <h1 className="FrontPage-title">
+          <h3 style={{ color: 'black' }} className="FrontPage-title">
           Studentskipnaden i Fredrikstad
-          </h1>
-          <h3 className="FrontPage-title">
-          Hybelvask
           </h3>
         </header>
-        <p className="Frontpage-intro">
-        Logg inn
+        <p style={{ color: 'black' }} className="Frontpage-intro">
+        Hybelvask
         </p>
         <button className="Student-button">
-        Student
+        Logg inn som student
         </button>
         <button className="Admin-button">
-        Ansatt
+        Logg inn som ansatt
         </button>
       </div>
     );
