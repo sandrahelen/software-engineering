@@ -1,6 +1,6 @@
 import React from 'react';
+import EditMembers from './editMembers/EditMembers';
 import './IndividualDorm.css';
-import DropDownMenu from '../dropDownMenu/DropDownMenu';
 
 const IndividualDorm = ({ dorm }) => {
     const approve = () => {
@@ -10,12 +10,13 @@ const IndividualDorm = ({ dorm }) => {
     return (
         <div className="dormBody">
             <p>Romnummer: {dorm.kollektivnummer}</p>
-            <DropDownMenu dormMembers={dorm.medlemmer} />
+            <p>Medlemmer: {dorm.medlemmer.length}</p>
             <button
                 onClick={() => approve()}
                 className="approveButton">
                 Godkjenn
             </button>
+            <EditMembers />
         </div>
     )
 }
