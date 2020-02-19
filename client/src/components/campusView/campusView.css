@@ -1,0 +1,16 @@
+.campusView {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.campusView-campuses {
+    
+}
+
+.campusView-text {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+}

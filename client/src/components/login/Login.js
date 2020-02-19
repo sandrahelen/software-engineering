@@ -4,6 +4,7 @@ import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import ReactDOM from 'react-dom';
 import { Switch, Route, useHistory} from 'react-router-dom';
 import AdminView from '../adminView/AdminView';
+import CampusView from '../campusView/CampusView';
 import Routes from '../Routes';
 import './Login.css';
 
@@ -35,7 +36,7 @@ export default function Login() {
                 if(match && response.data[0].admin === true){
                     console.log("password match and admin");
                     let x = document.getElementsByClassName("App");      
-                    ReactDOM.render(<AdminView />, x[0]);
+                    ReactDOM.render(<CampusView />, x[0]);
                 } else if(match) {
                     alert("not admin");
                 } else {
