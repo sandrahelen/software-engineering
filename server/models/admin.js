@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema({
+const AdminSchema = new Schema({
     username: {type: String, default: '', required: true},
     password: {type: String, default: '', required: true},
-    kollektiv: {type: Schema.Types.ObjectID, ref: "Kollektiv"}
+    studentby: {type: Schema.Types.ObjectID, ref: "Studentby"}
 });
 
-const User= mongoose.model('User', UserSchema);
+const Admin= mongoose.model('Admin', AdminSchema);
 
-module.exports = User;
+module.exports = Admin;
 
