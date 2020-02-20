@@ -11,7 +11,7 @@ const IndividualDorm = ({ dorm }) => {
     }
     
     return (
-        <div className="dormBody" style={{borderStyle: 'solid'}}>
+        <div className="dormBody">
             <p>Romnummer: {dorm.kollektivnummer}</p>
             <p onClick={() => setShowEditMembers(true)}>Medlemmer: {dorm.medlemmer.length}</p>
             <button

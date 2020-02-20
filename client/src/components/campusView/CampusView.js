@@ -22,14 +22,14 @@ const CampusView = () => {
             })
     }, []);
     return (
-        <div className="campusView">
+        <div className="campusView__body">
             <div className="campusView-header">
                 <h1>Mine studentbyer</h1>
             </div>
             <div className="campusView-campuses">
                 {campuses.map(campus =>
                     <Link className="campusView-text" to={`/AdminView?campusFromUrl=${campus._id}`}>
-                        <h3>{campus.navn}</h3>
+                        <p>{campus.navn}</p>
                     </Link>
                 )}
             </div>

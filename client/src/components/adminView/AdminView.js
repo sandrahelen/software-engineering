@@ -4,6 +4,9 @@ import axios from 'axios';
 import IndividualDorm from './individualDorm/IndividualDorm';
 import AddDorm from './addDorm/AddDorm';
 import './AdminView.css';
+import CampusView from '../campusView/CampusView';
+import { Link } from 'react-router-dom';
+
 
 const AdminView = ({ location }) => {
     const [dorms, setDorms] = useState([]);
@@ -14,9 +17,9 @@ const AdminView = ({ location }) => {
 
     useEffect(() => {
         const { campusFromUrl } = queryString.parse(location.search);
-       setCampusId(campusFromUrl)
+        setCampusId(campusFromUrl)
     }, [location])
-    
+
     useEffect(() => {
         axios.get('http://localhost:5000/api/kollektiv')
             .then(response => {
@@ -31,7 +34,10 @@ const AdminView = ({ location }) => {
             })
     }, [campusId]);
     return (
-        <div className="adminView">
+        <div className="adminView__body">
+            <Link className="adminView__back" to={'CampusView'}>
+                <p>Tilbake</p>
+            </Link>
             <div className="header">
                 <h1>Mine Kollektiv</h1>
             </div>
@@ -42,22 +48,17 @@ const AdminView = ({ location }) => {
                     {dorms.map((dorm, index) =>
                         <li key={index}><IndividualDorm dorm={dorm} /></li>)}
                 </ul>
-                
+
             </div>
             <div className="addDorm__wrapper">
-                <span 
-                    className="addDorm__plus"
-                    onClick={() =>
-                        setShowAddDorm(true)
-                    }>+</span>
-                <span
-                    className="addDorm__text"
+                <button
+                    className="addDorm__button"
                     onClick={() =>
                         setShowAddDorm(true)
                     }
                 >
                     Legg til kollektiv
-            </span>
+            </button>
             </div>
             <AddDorm showAddDorm={showAddDorm} setShowAddDorm={setShowAddDorm} campusId={campusId} />
         </div>
