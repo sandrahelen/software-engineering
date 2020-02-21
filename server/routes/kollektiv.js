@@ -36,6 +36,7 @@ router.put('/:id', (req, res, next) => {
 
 
 //Legger til et nytt kollektiv
+//TODO Trenger kanskje ikke denne
 router.post('/', (req, res, next) => {
     if(req.body){
         Kollektiv.create(req.body)

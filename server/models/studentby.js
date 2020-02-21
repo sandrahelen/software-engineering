@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const StudentbySchema = new Schema({
     navn: {type: String, required: true},
     kollektiv: {type: Array(Schema.Types.ObjectId), ref: "Kollektiv"},
-    vaktmester: {type: String, required: true}
+    user: {type: Schema.Types.ObjectID, ref: "Admin", required: true}
 })
 
 const Studentby= mongoose.model('Studentby', StudentbySchema);
