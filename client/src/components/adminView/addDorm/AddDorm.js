@@ -3,13 +3,11 @@ import axios from 'axios';
 import './AddDorm.css';
 
 const AddDorm = ({ showAddDorm, setShowAddDorm, campusId }) => {
-    const [dormNr, setDormNr] = useState()
+    const [dormNr, setDormNr] = useState('');
 
     const addDorm = () => {
         axios.post('http://localhost:5000/api/kollektiv',
             {
-                "medlemmer": [
-                ],
                 "kollektivnummer": dormNr,
                 "studentby": campusId,
                 "__v": 0,
@@ -50,12 +48,13 @@ const AddDorm = ({ showAddDorm, setShowAddDorm, campusId }) => {
                         type="button"
                         className="addDorm__submit"
                         onClick={() => {
+                            setDormNr('');
                             setShowAddDorm(false)
                             addDorm()
                         }
                         }
                     >
-                        Add Task
+                        Legg til
           </button>
                 </div>
             )

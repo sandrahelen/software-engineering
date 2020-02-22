@@ -6,7 +6,9 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
   }
-
+.adminView__header {
+  color: rgba(77, 161, 192, 0.8);
+}
 .adminView__back {
   text-transform: uppercase;
   text-decoration: none;

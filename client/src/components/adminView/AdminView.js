@@ -4,7 +4,6 @@ import axios from 'axios';
 import IndividualDorm from './individualDorm/IndividualDorm';
 import AddDorm from './addDorm/AddDorm';
 import './AdminView.css';
-import CampusView from '../campusView/CampusView';
 import { Link } from 'react-router-dom';
 
 
@@ -33,12 +32,13 @@ const AdminView = ({ location }) => {
                 console.log(error);
             })
     }, [campusId]);
+    console.log(dorms)
     return (
         <div className="adminView__body">
             <Link className="adminView__back" to={'CampusView'}>
                 <p>Tilbake</p>
             </Link>
-            <div className="header">
+            <div className="adminView__header">
                 <h1>Mine Kollektiv</h1>
             </div>
             <div className="adminView__dorms">

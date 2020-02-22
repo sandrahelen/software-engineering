@@ -2,16 +2,14 @@
     width: 40vW;
     height: 60vh;
     overflow: visible;
-      margin-bottom: 20px;
-      margin-top: 55px;
-      border-radius: 5px;
-      background-color: white;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      padding: 20px 30px;
-      -webkit-transform: translate(-50%, -50%);
-              transform: translate(-50%, -50%);
+    border-radius: 5px;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    padding: 20px 30px;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
 }
 
 .editMembers__overlay{
@@ -32,14 +30,18 @@
     flex-direction: row;
     justify-content: space-between;
 }
-.editMembers__list{
-    list-style-type: none;
-    width: 100%;
+
+.editMembers__delete {
+    color: gray;
+    height: 20px;
+    margin: 5px;
 }
 
 .editMembers__header{
     margin-top: 0px !important;
     padding-bottom: 20px;
+    color: rgba(77, 161, 192, 0.8);
+    font-weight: bold;
 }
 .editMembers__cancel{
     cursor: pointer;
@@ -48,12 +50,38 @@
       font-size: 30px;
 }
 
-.editMembers__addMember {
+.editMembers__list{
+    list-style-type: none;
+    width: 100%;
+}
+
+.editMembers__listMember {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.editMembers__add {
     position: absolute;
-    bottom: 10px;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, 0);
+    bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.editMembers__input {
+    width: 100%;
+    border: 1px solid #ddd;
+    background-color: white !important;
+    border-radius: 3px;
+    height: 35px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.editMembers__submit {
+    width: 100%;
     background-color: rgb(0, 162, 255);
     color: #fff !important;
     border: 1px solid transparent;

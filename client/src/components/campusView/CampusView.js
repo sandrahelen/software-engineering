@@ -3,17 +3,18 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './CampusView.css'
 
-const dummyStudentbyId = 'Roar Fiksemann';
+const dummyStudentbyId = '5e4e6ac6b28d3b0a748c2ead';
 
 const CampusView = () => {
     const [campuses, setCampuses] = useState([]);
     const [adminName, setAdminName] = useState();
-    
+
     useEffect(() => {
         axios.get('http://localhost:5000/api/studentby')
             .then(response => {
                 if (response.data) {
-                    let filteredCampuses = response.data.filter(campus => campus.vaktmester === dummyStudentbyId)
+                    //filter alle studentbyer som blir styrt av en vaktmester, men har nå bare en dummystudentbyid
+                    let filteredCampuses = response.data.filter(campus => campus.user === dummyStudentbyId)
                     setCampuses(filteredCampuses);
                 }
             })
@@ -23,14 +24,15 @@ const CampusView = () => {
     }, []);
     return (
         <div className="campusView__body">
-            <div className="campusView-header">
-                <h1>Mine studentbyer</h1>
+            <div className="campusView__header">
+                <h1 >Mine studentbyer</h1>
             </div>
             <div className="campusView-campuses">
-                {campuses.map(campus =>
-                    <Link className="campusView-text" to={`/AdminView?campusFromUrl=${campus._id}`}>
+                {campuses.map((campus, index) =>
+                    <Link key={index} className="campusView-text" to={`/AdminView?campusFromUrl=${campus._id}`}>
                         <p>{campus.navn}</p>
                     </Link>
+
                 )}
             </div>
         </div>
