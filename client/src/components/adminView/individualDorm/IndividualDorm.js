@@ -6,6 +6,7 @@ import './IndividualDorm.css';
 const IndividualDorm = ({ dorm }) => {
     const [showEditMemebers, setShowEditMembers] = useState(false);
     const [members, setMembers] = useState([]);
+    const [cleaningList, setCleaningList] = useState([]);
 
 
     useEffect(() => {
@@ -14,6 +15,17 @@ const IndividualDorm = ({ dorm }) => {
                 if (response.data) {
                     let filteredUsers = response.data.filter(user => user.kollektiv === dorm._id)
                     setMembers(filteredUsers)
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }, [dorm.id]);
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/api/vaskeliste')
+            .then(response => {
+                if (response.data) {
                 }
             })
             .catch((error) => {

@@ -29,7 +29,7 @@ const CampusView = () => {
             </div>
             <div className="campusView-campuses">
                 {campuses.map((campus, index) =>
-                    <Link key={index} className="campusView-text" to={`/AdminView?campusFromUrl=${campus._id}`}>
+                    <Link key={index} className="campusView-text" to={`/AdminView?campusId=${campus._id}&campusName=${campus.navn}`}>
                         <p>{campus.navn}</p>
                     </Link>
 

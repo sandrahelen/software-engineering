@@ -9,14 +9,16 @@ import { Link } from 'react-router-dom';
 
 const AdminView = ({ location }) => {
     const [dorms, setDorms] = useState([]);
-    const [campusId, setCampusId] = useState()
+    const [campusId, setCampusId] = useState();
+    const [campusName, setcampusName] = useState();
 
     //hook for å vise addDormcomponenten
     const [showAddDorm, setShowAddDorm] = useState(false)
 
     useEffect(() => {
-        const { campusFromUrl } = queryString.parse(location.search);
-        setCampusId(campusFromUrl)
+        const { campusId, campusName } = queryString.parse(location.search);
+        setCampusId(campusId);
+        setcampusName(campusName);
     }, [location])
 
     useEffect(() => {
@@ -39,7 +41,7 @@ const AdminView = ({ location }) => {
                 <p>Tilbake</p>
             </Link>
             <div className="adminView__header">
-                <h1>Mine Kollektiv</h1>
+                <h1>{campusName}</h1>
             </div>
             <div className="adminView__dorms">
 
