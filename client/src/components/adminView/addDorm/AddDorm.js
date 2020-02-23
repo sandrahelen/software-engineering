@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './AddDorm.css';
 
-const AddDorm = ({ showAddDorm, setShowAddDorm, campusId }) => {
+const AddDorm = ({ showAddDorm, setShowAddDorm, campusId ,render, setRender}) => {
     const [dormNr, setDormNr] = useState('');
 
     const addDorm = () => {
@@ -14,7 +14,7 @@ const AddDorm = ({ showAddDorm, setShowAddDorm, campusId }) => {
                 "vaskeliste": "5e4beb3a651bf53950f51dff"
             })
             .then(response => {
-                console.log(response)
+                setRender(!render);
             })
             .catch((error) => {
                 console.log(error);

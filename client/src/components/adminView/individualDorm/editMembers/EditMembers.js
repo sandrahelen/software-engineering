@@ -8,7 +8,7 @@ const EditMembers = ({ showEditMemebers, setShowEditMembers, members, setMembers
 
     const deleteMember = (id) => {
         axios.delete(`http://localhost:5000/api/user/${id}`)
-            .then(response => {
+            .then(() => {
                 setMembers(members.filter(member => member._id !== id));
             })
             .catch((error) => {

@@ -12,6 +12,9 @@ const AdminView = ({ location }) => {
     const [campusId, setCampusId] = useState();
     const [campusName, setcampusName] = useState();
 
+    //hook for å rerendre kollektivene etter å ha lagt til et nytt
+    const [render, setRender] = useState(false);
+
     //hook for å vise addDormcomponenten
     const [showAddDorm, setShowAddDorm] = useState(false)
 
@@ -33,8 +36,7 @@ const AdminView = ({ location }) => {
             .catch((error) => {
                 console.log(error);
             })
-    }, [campusId]);
-    console.log(dorms)
+    }, [campusId, render]);
     return (
         <div className="adminView__body">
             <Link className="adminView__back" to={'CampusView'}>
@@ -48,7 +50,7 @@ const AdminView = ({ location }) => {
                 {/*Maper hele dormlisten inn i IndividualDormkomponoenter*/}
                 <ul className="dormList">
                     {dorms.map((dorm, index) =>
-                        <li key={index}><IndividualDorm dorm={dorm} /></li>)}
+                        <li key={index}><IndividualDorm dorm={dorm} render={render} setRender={setRender}/></li>)}
                 </ul>
 
             </div>
@@ -60,9 +62,9 @@ const AdminView = ({ location }) => {
                     }
                 >
                     Legg til kollektiv
-            </button>
+                </button>
             </div>
-            <AddDorm showAddDorm={showAddDorm} setShowAddDorm={setShowAddDorm} campusId={campusId} />
+            <AddDorm showAddDorm={showAddDorm} setShowAddDorm={setShowAddDorm} campusId={campusId} render={render} setRender={setRender} />
         </div>
     )
 }
