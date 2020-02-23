@@ -2,6 +2,11 @@ const express = require ('express');
 const router = express.Router();
 const Vaskeliste = require("../models/vaskeliste");
 
+router.get('/', (req, res, next) => {
+    Vaskeliste.find()
+        .then(data => res.json(data))
+        .catch(next)
+});
 
 router.post('/', (req, res, next) => {
     if(req.body){
