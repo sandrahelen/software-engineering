@@ -23,8 +23,6 @@ const AddDorm = ({ showAddDorm, setShowAddDorm, campusId }) => {
 
     return (
         <div className={showAddDorm ? 'addDorm__overlay' : ''}>
-
-
             {showAddDorm && (
                 <div className="addDorm__body">
                     <h2 className="header">Legg til kollektiv</h2>
@@ -51,14 +49,13 @@ const AddDorm = ({ showAddDorm, setShowAddDorm, campusId }) => {
                             setDormNr('');
                             setShowAddDorm(false)
                             addDorm()
-                        }
+                            }
                         }
                     >
                         Legg til
-          </button>
+                    </button>
                 </div>
-            )
-            }
+            )}
         </div>
     )
 }

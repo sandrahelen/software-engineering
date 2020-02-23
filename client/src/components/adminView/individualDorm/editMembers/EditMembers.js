@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import axios from 'axios';
 import { FaTrashAlt } from 'react-icons/fa';
 import './EditMembers.css';
 
 const EditMembers = ({ showEditMemebers, setShowEditMembers, members, setMembers, dormId }) => {
     const [newMember, setNewMember] = useState('');
+
     const deleteMember = (id) => {
         axios.delete(`http://localhost:5000/api/user/${id}`)
             .then(response => {
@@ -14,6 +15,7 @@ const EditMembers = ({ showEditMemebers, setShowEditMembers, members, setMembers
                 console.log(error);
             })
     };
+
     const addMember = () => {
         axios.post('http://localhost:5000/api/user',
             {
@@ -28,7 +30,8 @@ const EditMembers = ({ showEditMemebers, setShowEditMembers, members, setMembers
             .catch((error) => {
                 console.log(error);
             })
-    }
+    };
+
     return (
         <div className={showEditMemebers ? 'editMembers__overlay' : ''}>
             {showEditMemebers && (
