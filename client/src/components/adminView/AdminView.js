@@ -5,6 +5,7 @@ import IndividualDorm from './individualDorm/IndividualDorm';
 import AddDorm from './addDorm/AddDorm';
 import './AdminView.css';
 import { Link } from 'react-router-dom';
+import EditCleaningList from './editCleaningList/EditCleaningList';
 
 
 const AdminView = ({ location }) => {
@@ -17,6 +18,7 @@ const AdminView = ({ location }) => {
 
     //hook for å vise addDormcomponenten
     const [showAddDorm, setShowAddDorm] = useState(false)
+    const [showCleaningList, setShowCleaningList] = useState(false)
 
     useEffect(() => {
         const { campusId, campusName } = queryString.parse(location.search);
@@ -50,11 +52,19 @@ const AdminView = ({ location }) => {
                 {/*Maper hele dormlisten inn i IndividualDormkomponoenter*/}
                 <ul className="dormList">
                     {dorms.map((dorm, index) =>
-                        <li key={index}><IndividualDorm dorm={dorm} render={render} setRender={setRender}/></li>)}
+                        <li key={index}><IndividualDorm dorm={dorm} render={render} setRender={setRender} /></li>)}
                 </ul>
 
             </div>
-            <div className="addDorm__wrapper">
+            <div className="buttons__wrapper">
+                <button
+                    className="editCleaningList__button"
+                    onClick={() =>
+                        setShowCleaningList(true)
+                    }
+                >
+                    Endre vaskeliste
+                </button>
                 <button
                     className="addDorm__button"
                     onClick={() =>
@@ -64,6 +74,7 @@ const AdminView = ({ location }) => {
                     Legg til kollektiv
                 </button>
             </div>
+            <EditCleaningList  showCleaningList={showCleaningList} setShowCleaningList={setShowCleaningList} dormId={campusId} /> 
             <AddDorm showAddDorm={showAddDorm} setShowAddDorm={setShowAddDorm} campusId={campusId} render={render} setRender={setRender} />
         </div>
     )

@@ -1,47 +1,22 @@
 import React, { useState} from 'react';
 import axios from 'axios';
 import { FaTrashAlt } from 'react-icons/fa';
+import { useCleaningList } from '../../../hooks/vaskeliste';
 import './EditCleaningList.css';
 
-const EditCleaningList = ({ showEditCleaningList, setShowEditCleaningList, CleaningList, setCleaningList, dormId }) => {
-    const [newCleaningItem, setNewCleaningItem] = useState('');
-
-    // const deleteCleaningList = (id) => {
-    //     axios.delete(`http://localhost:5000/api/user/${id}`)
-    //         .then(() => {
-    //             setCleaningList(CleaningList.filter(member => member._id !== id));
-    //         })
-    //         .catch((error) => {
-    //             console.log(error);
-    //         })
-    // };
-
-    // const addCleaningList = () => {
-    //     axios.post('http://localhost:5000/api/vaskeliste',
-    //         {
-    //             "username": newMember,
-    //             "password": "12345",
-    //             "__v": 0,
-    //             "kollektiv": dormId,
-    //         })
-    //         .then(response => {
-    //             console.log(response)
-    //         })
-    //         .catch((error) => {
-    //             console.log(error);
-    //         })
-    // };
+const EditCleaningList = ({ showCleaningList, setShowCleaningList, dormId }) => {
+    const [cleaningList, setCleaningList] = useState('');
 
     return (
-        <div className={showEditMemebers ? 'editCleaningList__overlay' : ''}>
-            {showEditMemebers && (
+        <div className={showCleaningList ? 'editCleaningList__overlay' : ''}>
+            {showCleaningList && (
                 <div className="editCleaningList__body">
                     <div className="editCleaningList__headerWrapper">
                         <p className="editCleaningList__header">Beboere</p>
                         <span
                             className="editCleaningList__cancel"
                             onClick={() => {
-                                setShowEditCleaningList(false);
+                                setShowCleaningList(false);
                             }}
                             role="button"
                         >
@@ -49,7 +24,7 @@ const EditCleaningList = ({ showEditCleaningList, setShowEditCleaningList, Clean
                     </span>
                     </div>
                     <div className="editCleaningList__list">
-                        {CleaningList.map((member, index) =>
+                        {cleaningList.map((member, index) =>
                             <div className="editCleaningList__listMember">
                                 <div key={index} >{member.username}</div>
                                 <FaTrashAlt
@@ -60,20 +35,18 @@ const EditCleaningList = ({ showEditCleaningList, setShowEditCleaningList, Clean
                     </div>
                     <div className="editCleaningList__add">
                         <input
-                            value={newMember}
-                            onChange={e => setNewCleaningItem(e.target.value)}
+                            value={'newMember'}
                             type="text"
                             className="editCleaningList__input"
                             placeholder="Skriv inn navn her" />
                         <button
                             className="editCleaningList__submit"
                             onClick={() => {
-                                addMember()
-                                setNewMember('')
+                               
                             }
                             }
                         >
-                            Legg til beboer
+                            Legg til gjøremål
                     </button>
                     </div>
                 </div>)

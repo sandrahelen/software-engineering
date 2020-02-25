@@ -50,7 +50,6 @@ const IndividualDorm = ({ dorm, render, setRender }) => {
             </button>
             <EditMembers showEditMemebers={showEditMemebers} setShowEditMembers={setShowEditMembers} members={users} setMembers={setUsers} dormId={dorm._id}/>
             {/* <EditCleaningList showEditCleaningList={showEditCleaningList} setShowEditCleaningList={setShowEditCleaningLsit}  dormId={dorm._id}/> */}
-            {cleaningList[0].liste.map((item, index) => <div key={index}>{item}</div>)}
             <FaTrashAlt
                                     className="individualDorm__delete"
                                     onClick={() => deleteDorm(dorm._id)} />
