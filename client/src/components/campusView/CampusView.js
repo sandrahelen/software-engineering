@@ -11,9 +11,8 @@ const dummyAdmin = {
 }
 
 const CampusView = () => {
-    const { campuses, setCampuses } = useCampuses(dummyAdmin);
-    const [adminName, setAdminName] = useState();
-    console.log(campuses)
+    const { campuses } = useCampuses(dummyAdmin._id);
+
     return (
         <div className="campusView__body">
             <div className="campusView__header">
@@ -21,7 +20,7 @@ const CampusView = () => {
             </div>
             <div className="campusView-campuses">
                 {campuses.map((campus, index) =>
-                    <Link key={index} className="campusView-text" to={`/AdminView?campusId=${campus._id}&campusName=${campus.navn}`}>
+                    <Link key={index} className="campusView-text" to={`/AdminView?campusId=${campus._id}&campusName=${campus.navn}&cleaningListId=${campus.vaskeliste}`}>
                         <p>{campus.navn}</p>
                     </Link>
 

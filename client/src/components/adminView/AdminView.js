@@ -12,6 +12,7 @@ const AdminView = ({ location }) => {
     const [dorms, setDorms] = useState([]);
     const [campusId, setCampusId] = useState();
     const [campusName, setcampusName] = useState();
+    const [cleaningListId, setCleaningListId] = useState();
 
     //hook for å rerendre kollektivene etter å ha lagt til et nytt
     const [render, setRender] = useState(false);
@@ -21,9 +22,10 @@ const AdminView = ({ location }) => {
     const [showCleaningList, setShowCleaningList] = useState(false)
 
     useEffect(() => {
-        const { campusId, campusName } = queryString.parse(location.search);
+        const { campusId, campusName, cleaningListId } = queryString.parse(location.search);
         setCampusId(campusId);
         setcampusName(campusName);
+        setCleaningListId(cleaningListId);
     }, [location])
 
     useEffect(() => {
@@ -58,7 +60,7 @@ const AdminView = ({ location }) => {
             </div>
             <div className="buttons__wrapper">
                 <button
-                    className="editCleaningList__button"
+                    className="adminView__button"
                     onClick={() =>
                         setShowCleaningList(true)
                     }
@@ -66,7 +68,7 @@ const AdminView = ({ location }) => {
                     Endre vaskeliste
                 </button>
                 <button
-                    className="addDorm__button"
+                    className="adminView__button"
                     onClick={() =>
                         setShowAddDorm(true)
                     }
@@ -74,7 +76,7 @@ const AdminView = ({ location }) => {
                     Legg til kollektiv
                 </button>
             </div>
-            <EditCleaningList  showCleaningList={showCleaningList} setShowCleaningList={setShowCleaningList} dormId={campusId} /> 
+            <EditCleaningList  showCleaningList={showCleaningList} setShowCleaningList={setShowCleaningList} cleaningListId={cleaningListId}/> 
             <AddDorm showAddDorm={showAddDorm} setShowAddDorm={setShowAddDorm} campusId={campusId} render={render} setRender={setRender} />
         </div>
     )

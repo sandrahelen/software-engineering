@@ -24,7 +24,7 @@ const IndividualDorm = ({ dorm, render, setRender }) => {
                 console.log(error);
             })
     }, [dorm._id, render]);
-    
+
     const approve = () => {
         alert("Kollektivet er godkjent")
     }
@@ -38,7 +38,6 @@ const IndividualDorm = ({ dorm, render, setRender }) => {
                 console.log(error);
             })
     };
-    console.log(render)
     return (
         <div className="dormBody">
             <p>Romnummer: {dorm.kollektivnummer}</p>
@@ -48,11 +47,10 @@ const IndividualDorm = ({ dorm, render, setRender }) => {
                 className="approveButton">
                 Godkjenn
             </button>
-            <EditMembers showEditMemebers={showEditMemebers} setShowEditMembers={setShowEditMembers} members={users} setMembers={setUsers} dormId={dorm._id}/>
-            {/* <EditCleaningList showEditCleaningList={showEditCleaningList} setShowEditCleaningList={setShowEditCleaningLsit}  dormId={dorm._id}/> */}
+            <EditMembers showEditMemebers={showEditMemebers} setShowEditMembers={setShowEditMembers} members={users} setMembers={setUsers} dormId={dorm._id} render={render} setRender={setRender} />
             <FaTrashAlt
-                                    className="individualDorm__delete"
-                                    onClick={() => deleteDorm(dorm._id)} />
+                className="individualDorm__delete"
+                onClick={() => deleteDorm(dorm._id)} />
         </div>
     )
 }

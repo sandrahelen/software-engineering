@@ -4,15 +4,12 @@
     justify-content: space-between;
     width: 75vw;
     align-items: center;
-    border-style: solid;
-    border-color: gray;
+    padding: 12px 45px;
+    border-bottom: 1px solid gray;
+    border-top: 1px solid gray;
 
 }
 
-.memberList {
-    list-style-type: none;
-    cursor: pointer;
-}
 
 .approveButton {
     border: 1px solid transparent;
