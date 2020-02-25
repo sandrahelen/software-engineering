@@ -3,6 +3,9 @@
     flex-direction: row;
     justify-content: space-between;
     width: 75vw;
+    align-items: center;
+    border-style: solid;
+    border-color: gray;
 
 }
 
@@ -14,12 +17,9 @@
 .approveButton {
     border: 1px solid transparent;
     color: whitesmoke;
-    margin-right: 5px;
-    margin-top: 10px;
     font-weight: bold;
     font-size: 13px !important;
     line-height: 17px;
-    padding: 6px 12px 7px 12px;
     position: relative;
     display: inline-block;
     white-space: nowrap;
@@ -28,4 +28,11 @@
     text-align: center;
     cursor: pointer;
     background-color: green;
+}
+
+.individualDorm__delete {
+    cursor: pointer;
+    color: gray;
+    height: 30px;
+    margin-right: 30px;
 }
