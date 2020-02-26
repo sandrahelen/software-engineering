@@ -7,7 +7,7 @@ import { blue } from "color-name";
 class FrontPage extends Component {
   styles = {
     fontSize: 20,
-    fontWwicht: "bold",
+    fontWeight: "bold",
     fontColor: "blue",
     borderRadius: 10,
     width: 300,
@@ -23,7 +23,7 @@ class FrontPage extends Component {
         <div className="FrontPage-header">
           <img
             src={logo}
-            style={{ height: 300, width: 350 }}
+            style={{ height: 300, width: 300 }}
             className="FrontPage-logo"
             alt="logo"
           />
@@ -31,10 +31,10 @@ class FrontPage extends Component {
           <h4 className="FrontPage-intro">Hybelvask</h4>
           <div className="buttons">
             <Link>
-              <button style={this.styles}>Log in i mittkollektiv</button>
+              <button style={this.styles}>Logg inn i mitt kollektiv</button>
             </Link>
             <Link to="LoginPage">
-              <button style={this.styles}>Log in som admin</button>
+              <button style={this.styles}>Logg inn som admin</button>
             </Link>
           </div>
         </div>
