@@ -6,13 +6,16 @@ const studentbyRoute = require('./routes/studentby');
 const userRoute = require('./routes/user');
 const vaskelisteRoute = require('./routes/vaskeliste');
 const adminRoute = require('./routes/admin');
+const cors = require('cors');
 const path = require('path');
 require('dotenv').config();
 
 const app = express();
 
-const port = process.env.PORT || 5000;
+//Må bruke cors siden server og frontend kjører på forskjellige porter
+app.use(cors());
 
+const port = process.env.PORT || 5000;
 
 //TODO Add mongoose link in .env file
 mongoose.connect('mongodb+srv://fredrik:12345@pu48-e21uc.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })

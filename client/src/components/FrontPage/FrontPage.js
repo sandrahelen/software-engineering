@@ -1,11 +1,17 @@
 import React, { Component } from "react";
 import "./FrontPage.css";
+import logo from "./hybelvask.svg";
 import { Link } from "react-router-dom";
+import { blue } from "color-name";
 
 class FrontPage extends Component {
   styles = {
     fontSize: 20,
-    fontWwicht: "bold"
+    fontWwicht: "bold",
+    fontColor: "blue",
+    borderRadius: 10,
+    width: 300,
+    height: 40
   };
   state = {
     count: 0
@@ -14,16 +20,24 @@ class FrontPage extends Component {
   render() {
     return (
       <div className="FrontPage">
-        <header className="FrontPage-header">
-          <h1 className="FrontPage-title">Vaskeliste</h1>
-        </header>
-        <p className="Frontpage-intro">Studentskipnaden i Fredrikstad</p>
-        <button style={this.styles} className="btn btn-secondary btn-sm m-2">
-          Log in i mittkollektiv
-        </button>
-        <Link to="LoginPage">
-          <button>Log in som admin</button>
-        </Link>
+        <div className="FrontPage-header">
+          <img
+            src={logo}
+            style={{ height: 300, width: 350 }}
+            className="FrontPage-logo"
+            alt="logo"
+          />
+          <h3 className="FrontPage-title">Studentskipnaden i Fredrikstad</h3>
+          <h4 className="FrontPage-intro">Hybelvask</h4>
+          <div className="buttons">
+            <Link>
+              <button style={this.styles}>Log in i mittkollektiv</button>
+            </Link>
+            <Link to="LoginPage">
+              <button style={this.styles}>Log in som admin</button>
+            </Link>
+          </div>
+        </div>
       </div>
     );
   }

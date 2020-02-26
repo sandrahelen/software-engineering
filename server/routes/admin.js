@@ -26,6 +26,12 @@ router.delete('/:id', (req,res,next) => {
         .catch(next)
 });
 
+router.get('/username/:username', (req, res, next) => {
+    Admin.find({"username": req.params.username})
+        .then(data => res.json(data))
+        .catch(next)
+});
+
 router.get('/:id', (req, res, next) => {
     Admin.find({"_id": req.params.id})
         .then(data => res.json(data))
