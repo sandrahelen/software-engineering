@@ -2,10 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const VaskelisteSchema = new Schema({
-    kollektivnummer: Number,
-    studentby: String,
-    medlemmer: Array,
-    vaktmester: String
+    liste: {type: Array, default: ["Kjøkken", "Stue", "Bad", "Gang"], required:true}
 })
 
 const Vaskeliste= mongoose.model('Vaskeliste', VaskelisteSchema);
