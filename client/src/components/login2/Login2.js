@@ -3,9 +3,9 @@ import axios from "axios";
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import ReactDOM from "react-dom";
 import { Switch, Route, useHistory } from "react-router-dom";
-import AdminView from "../adminView/AdminView";
+import Vaskeliste from "../vaskeliste/Vaskeliste";
 import Routes from "../Routes";
-import "./Login.css";
+import "./Login2.css";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -23,7 +23,7 @@ export default function Login() {
   }
 
   function signIn() {
-    const lookup = "http://localhost:5000/api/admin/username/" + username;
+    const lookup = "http://localhost:5000/api/user/username/" + username;
     axios.get(lookup).then(response => {
       if (response.data.length === 0) {
         alert("No user");
@@ -34,7 +34,7 @@ export default function Login() {
           let x = document.getElementsByClassName("App");
           ReactDOM.render(<AdminView />, x[0]);
         } else if (match) {
-          alert("not admin");
+          alert("not user");
         } else {
           alert("password no match");
         }
