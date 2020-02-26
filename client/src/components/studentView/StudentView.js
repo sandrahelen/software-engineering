@@ -1,21 +1,25 @@
 import React, { Component } from "react";
 import "./StudentView.css"
 import {useCleaningList} from "../../hooks/vaskeliste"
-import { useCampuses } from "../../hooks/studentby"
-import { useDorms } from "../../hooks/kollektiv"
+import { useCampusForUser } from "../../hooks/campusIdForUser"
+import { useDormForUser } from "../../hooks/dormForStudentID"
 
 
 const StudentView = () => {
-  const kollekivId = "5e5529e91c9d440000a0d769"
-  const { dorms, setDorms } = useDorms("5e552a301c9d440000a0d76a")
-
-  const { campuses, setCampuses } = useCleaningList("5e552a301c9d440000a0d76a")
-
-  const { cleaningList } = useCleaningList("5e552a301c9d440000a0d76a")
-  console.log(cleaningList)
+  const kollektivId = "5e5529e91c9d440000a0d769"
+  const { dorm, setDorm } =
+  useDormForUser(kollektivId)
+  console.log(dorm)
+  const { campus, setCampus } = useCampusForUser(dorm.studenbyId)
+  console.log(campus)
+  const { cleaningList } = useCleaningList(campus)
+  console.log(cleaningList.liste)
   return (
     <div className="studentView">
       <h3 className="studentView-title">Mitt kollektiv</h3>
+      {cleaningList.liste.map((list, index) => {
+        <div key={index}>{list}</div>
+      })}
     </div>
   )
 }
