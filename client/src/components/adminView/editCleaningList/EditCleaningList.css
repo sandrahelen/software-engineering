@@ -1,4 +1,4 @@
-.editMembers__body {
+.editCleaningList__body {
     width: 50vW;
     height: 60vh;
     overflow: visible;
@@ -12,7 +12,7 @@
             transform: translate(-50%, -50%);
 }
 
-.editMembers__overlay{
+.editCleaningList__overlay{
     background: rgba(102,102,102,0.5);
     position: absolute; 
     margin: auto;
@@ -25,45 +25,45 @@
     transition: opacity 0.2s ease-in;
     height: calc(100vh);
 }
-.editMembers__headerWrapper{
+.editCleaningList__headerWrapper{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.editMembers__delete {
-    cursor: pointer;
+.editCleaningList__delete {
     color: gray;
     height: 20px;
     margin: 5px;
+    cursor: pointer;
 }
 
-.editMembers__header{
+.editCleaningList__header{
     margin-top: 0px !important;
     padding-bottom: 20px;
     color: rgba(77, 161, 192, 0.8);
     font-weight: bold;
 }
-.editMembers__cancel{
+.editCleaningList__cancel{
     cursor: pointer;
       color: rgb(194, 190, 190);
       font-weight: bold;
       font-size: 30px;
 }
 
-.editMembers__list{
+.editCleaningList__list{
     list-style-type: none;
     width: 100%;
 }
 
-.editMembers__listMember {
+.editCleaningList__listMember {
     padding-top: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.editMembers__add {
+.editCleaningList__add {
     position: absolute;
     left: 50%;
     -webkit-transform: translate(-50%, 0);
@@ -72,7 +72,7 @@
     flex-direction: column;
     align-items: center;
 }
-.editMembers__input {
+.editCleaningList__input {
     width: 100%;
     border: 1px solid #ddd;
     background-color: white !important;
@@ -81,7 +81,7 @@
     padding-left: 10px;
     padding-right: 10px;
 }
-.editMembers__submit {
+.editCleaningList__submit {
     width: 100%;
     background-color: rgb(0, 162, 255);
     color: #fff !important;

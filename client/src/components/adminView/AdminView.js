@@ -5,23 +5,27 @@ import IndividualDorm from './individualDorm/IndividualDorm';
 import AddDorm from './addDorm/AddDorm';
 import './AdminView.css';
 import { Link } from 'react-router-dom';
+import EditCleaningList from './editCleaningList/EditCleaningList';
 
 
 const AdminView = ({ location }) => {
     const [dorms, setDorms] = useState([]);
     const [campusId, setCampusId] = useState();
     const [campusName, setcampusName] = useState();
+    const [cleaningListId, setCleaningListId] = useState();
 
     //hook for å rerendre kollektivene etter å ha lagt til et nytt
     const [render, setRender] = useState(false);
 
     //hook for å vise addDormcomponenten
     const [showAddDorm, setShowAddDorm] = useState(false)
+    const [showCleaningList, setShowCleaningList] = useState(false)
 
     useEffect(() => {
-        const { campusId, campusName } = queryString.parse(location.search);
+        const { campusId, campusName, cleaningListId } = queryString.parse(location.search);
         setCampusId(campusId);
         setcampusName(campusName);
+        setCleaningListId(cleaningListId);
     }, [location])
 
     useEffect(() => {
@@ -50,13 +54,21 @@ const AdminView = ({ location }) => {
                 {/*Maper hele dormlisten inn i IndividualDormkomponoenter*/}
                 <ul className="dormList">
                     {dorms.map((dorm, index) =>
-                        <li key={index}><IndividualDorm dorm={dorm} render={render} setRender={setRender}/></li>)}
+                        <li key={index}><IndividualDorm dorm={dorm} render={render} setRender={setRender} /></li>)}
                 </ul>
 
             </div>
-            <div className="addDorm__wrapper">
+            <div className="buttons__wrapper">
                 <button
-                    className="addDorm__button"
+                    className="adminView__button"
+                    onClick={() =>
+                        setShowCleaningList(true)
+                    }
+                >
+                    Endre vaskeliste
+                </button>
+                <button
+                    className="adminView__button"
                     onClick={() =>
                         setShowAddDorm(true)
                     }
@@ -64,6 +76,7 @@ const AdminView = ({ location }) => {
                     Legg til kollektiv
                 </button>
             </div>
+            <EditCleaningList  showCleaningList={showCleaningList} setShowCleaningList={setShowCleaningList} cleaningListId={cleaningListId}/> 
             <AddDorm showAddDorm={showAddDorm} setShowAddDorm={setShowAddDorm} campusId={campusId} render={render} setRender={setRender} />
         </div>
     )

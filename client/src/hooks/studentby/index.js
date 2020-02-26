@@ -8,7 +8,8 @@ export const useCampuses = (adminId) => {
             .then(response => {
                 if (response.data) {
                     //filter alle studentbyer som blir styrt av en vaktmester, men har nå bare en dummystudentbyid
-                    let filteredCampuses = response.data.filter(campus => campus.user === adminId)
+                    console.log(response.data)
+                    let filteredCampuses = response.data.filter(campus => campus.admin === adminId)
                     setCampuses(filteredCampuses);
                 }
             })

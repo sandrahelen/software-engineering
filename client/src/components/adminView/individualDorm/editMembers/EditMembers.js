@@ -3,8 +3,11 @@ import axios from 'axios';
 import { FaTrashAlt } from 'react-icons/fa';
 import './EditMembers.css';
 
-const EditMembers = ({ showEditMemebers, setShowEditMembers, members, setMembers, dormId }) => {
-    const [newMember, setNewMember] = useState('');
+const EditMembers = ({ showEditMemebers, setShowEditMembers, members, setMembers, dormId, render, setRender}) => {
+    const [newMemberUsername, setNewMemberUsername] = useState('');
+    const [newMemberFirstName, setNewMemberFirstName] = useState('');
+    const [newMemberLastName, setNewMemberLastName] = useState('');
+    const [render2, setRender2] = useState(false);
 
     const deleteMember = (id) => {
         axios.delete(`http://localhost:5000/api/user/${id}`)
@@ -19,13 +22,14 @@ const EditMembers = ({ showEditMemebers, setShowEditMembers, members, setMembers
     const addMember = () => {
         axios.post('http://localhost:5000/api/user',
             {
-                "username": newMember,
+                "username": newMemberUsername,
+                "fornavn": newMemberFirstName,
+                "etternavn": newMemberLastName,
                 "password": "12345",
                 "__v": 0,
                 "kollektiv": dormId,
             })
             .then(response => {
-                console.log(response)
             })
             .catch((error) => {
                 console.log(error);
@@ -50,26 +54,44 @@ const EditMembers = ({ showEditMemebers, setShowEditMembers, members, setMembers
                     </div>
                     <div className="editMembers__list">
                         {members.map((member, index) =>
-                            <div className="editMembers__listMember">
-                                <div key={index} >{member.username}</div>
+                            <div key={index} className="editMembers__listMember">
+                                <div  >{member.username}</div>
                                 <FaTrashAlt
                                     className="editMembers__delete"
-                                    onClick={() => deleteMember(member._id)} />
+                                    onClick={() => {
+                                        deleteMember(member._id)
+                                        setRender2(!render2);
+                                        }} />
                             </div>
                         )}
                     </div>
                     <div className="editMembers__add">
                         <input
-                            value={newMember}
-                            onChange={e => setNewMember(e.target.value)}
+                            value={newMemberUsername}
+                            onChange={e => setNewMemberUsername(e.target.value)}
                             type="text"
                             className="editMembers__input"
-                            placeholder="Skriv inn navn her" />
+                            placeholder="Skriv brukernavn her" />
+                        <input
+                            value={newMemberFirstName}
+                            onChange={e => setNewMemberFirstName(e.target.value)}
+                            type="text"
+                            className="editMembers__input"
+                            placeholder="Skriv inn fornavn" />
+                        <input
+                            value={newMemberLastName}
+                            onChange={e => setNewMemberLastName(e.target.value)}
+                            type="text"
+                            className="editMembers__input"
+                            placeholder="Skriv inn etternavn" />
                         <button
                             className="editMembers__submit"
                             onClick={() => {
                                 addMember()
-                                setNewMember('')
+                                setNewMemberUsername('')
+                                setNewMemberFirstName('')
+                                setNewMemberLastName('')
+                                setRender(!render)
                             }
                             }
                         >
