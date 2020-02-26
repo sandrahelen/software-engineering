@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
 import AdminView from "../adminView/AdminView";
 import Routes from "../Routes";
-import "./Login.css";
+import "./Login2.css";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -22,7 +22,7 @@ export default function Login() {
   }
 
   function signIn() {
-    const lookup = "http://localhost:5000/api/admin/username/" + username;
+    const lookup = "http://localhost:5000/api/user/username/" + username;
     axios.get(lookup).then(response => {
       if (response.data.length === 0) {
         console.log("No user");
@@ -33,7 +33,7 @@ export default function Login() {
           console.log(response);
           return true;
         } else if (match) {
-          console.log("not admin");
+          console.log("not user");
           return false;
         } else {
           console.log("password no match");
