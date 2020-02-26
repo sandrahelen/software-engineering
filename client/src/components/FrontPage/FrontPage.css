@@ -1,0 +1,33 @@
+.FrontPage {
+  text-align: center;
+}
+
+.FrontPage-header {
+  background-color: rgb(254, 255, 255);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(35px + 2vmin);
+  color: rgba(77, 161, 192, 0.8);
+}
+.FrontPage-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(20px + 1vmin);
+  color: rgba(77, 161, 192, 0.8);
+  margin: 20px;
+}
+.FrontPage-title {
+  margin: 0 !important;
+}
+.FrontPage-link {
+  color: #61dafb;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+}
