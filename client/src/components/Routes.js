@@ -5,9 +5,6 @@ import CampusView from "./campusView/CampusView";
 import FrontPage from "./frontPage/FrontPage";
 import Login from "./login/Login";
 import Login2 from "./login2/Login2";
-import StudentView from "./studentView/StudentView";
-
-
 const Routes = () => (
   <Switch>
     <Route exact path="/" component={FrontPage} />

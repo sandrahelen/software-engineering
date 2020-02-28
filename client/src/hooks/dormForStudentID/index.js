@@ -7,8 +7,6 @@ export const useDormWithDormId = (kollektivId) => {
         studentby: "",
         _id: "",
     });
-export const useDormForUser = (kollektivId) => {
-    const [dorm, setDorm] = useState();
     useEffect(() => {
         axios.get(`http://localhost:5000/api/kollektiv/${kollektivId}`)
             .then(response => {
