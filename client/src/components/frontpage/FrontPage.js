@@ -30,7 +30,7 @@ class FrontPage extends Component {
           <h3 className="FrontPage-title">Studentskipnaden i Fredrikstad</h3>
           <h4 className="FrontPage-intro">Hybelvask</h4>
           <div className="buttons">
-            <Link>
+            <Link to="LoginPage2">
               <button style={this.styles}>Log in i mittkollektiv</button>
             </Link>
             <Link to="LoginPage">
