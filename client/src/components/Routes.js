@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import AdminView from "./adminView/AdminView";
 import CampusView from "./campusView/CampusView";
+import StudentView from "./studentView/StudentView"
 import FrontPage from "./frontPage/FrontPage";
 import Login from "./login/Login";
 import Login2 from "./login2/Login2";
