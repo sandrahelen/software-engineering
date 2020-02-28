@@ -18,5 +18,5 @@ export const useDormWithDormId = (kollektivId) => {
                 console.log(error);
             })
     }, [kollektivId]);
-    return dorm.studentby;
+    return dorm;
 }
