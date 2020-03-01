@@ -1,13 +1,13 @@
 const express = require ('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
-const Admin = require("../models/admin");
+const User = require("../models/user");
 const jwt = require('jsonwebtoken');
 const config = require('config');
 
 /// Register a new User
 router.post('/register', async(req, res) => {
-    const {username, password} = req.body;
+    const {username, password, kollektiv, fornavn, etternavn} = req.body;
 
     if(!username || !password) return res.status(400).json({msg: "Please enter all fields"});
 
@@ -18,9 +18,12 @@ router.post('/register', async(req, res) => {
         const hash = await bcrypt.hash(password, salt);
         if(!hash) throw Error("something wrong with hash");
 
-        const newUser = new Admin({
+        const newUser = new User({
             username: username,
-            password: hash
+            password: hash,
+            kollektiv: kollektiv,
+            fornavn: fornavn,
+            etternavn: etternavn
         });
 
         const saveUser = await newUser.save();
@@ -32,7 +35,10 @@ router.post('/register', async(req, res) => {
             user: {
                 id: saveUser._id,
                 username: saveUser.username,
-                password: saveUser.password
+                password: saveUser.password,
+                kollektiv: saveUser.kollektiv,
+                fornavn: saveUser.fornavn,
+                etternavn: saveUser.etternavn
             }
         });
     } catch (e) {res.status(400).json({error: e.message})};
@@ -44,7 +50,7 @@ router.post('/login', (req, res) => {
 
     if(!username || !password) return res.status(400).json({msg: "Please enter all fields"});
 
-    Admin.findOne({ username })
+    User.findOne({ username })
         .then( user => {
             if(!user) return res.status(400).json({msg: "User Does not exist"});
 
@@ -68,26 +74,26 @@ router.post('/login', (req, res) => {
 
 
 router.delete('/:id', (req,res,next) => {
-    Admin.findOneAndDelete({'_id':req.params.id})
+    User.findOneAndDelete({'_id':req.params.id})
         .then(data => res.json(data))
         .catch(next)
 });
 
 router.get('/', (req, res, next) => {
-    Admin.find()
+    User.find()
         .then(data => res.json(data))
         .catch(next)
 });
 
 
 router.get('/:id', (req, res, next) => {
-    Admin.find({"_id": req.params.id})
+    User.find({"_id": req.params.id})
         .then(data => res.json(data))
         .catch(next)
 });
 
 router.get('/username/:username', (req, res, next) => {
-    Admin.find({"username": req.params.username})
+    User.find({"username": req.params.username})
         .then(data => res.json(data))
         .catch(next)
 });
