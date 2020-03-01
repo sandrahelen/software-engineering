@@ -10,6 +10,7 @@
     "body-parser": "latest",
     "dotenv": "latest",
     "express": "latest",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.1",
     "react": "^16.12.0",
     "react-axios": "^2.0.3",
