@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
-import jwt from "jsonwebtoken";
-import ReactDOM from "react-dom";
-import { Link, useHistory } from "react-router-dom";
-import AdminView from "../adminView/AdminView";
-import Routes from "../Routes";
+import {useHistory } from "react-router-dom";
 import "./Login.css";
 
 export default function Login() {
@@ -45,7 +41,7 @@ export default function Login() {
   return (
     <div className="Login" id="Login">
       <form onSubmit={handleSubmit}>
-        <FormGroup controllId="username">
+        <FormGroup controllid="username">
           <FormLabel
             style={{
               fontSize: 25
@@ -66,7 +62,7 @@ export default function Login() {
             onChange={e => setUsername(e.target.value)}
           />
         </FormGroup>
-        <FormGroup controllId="password">
+        <FormGroup controllid="password">
           <FormLabel
             style={{
               fontSize: 25
