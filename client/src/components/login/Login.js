@@ -28,7 +28,7 @@ export default function Login() {
     }).then(response => {
         console.log(response);
         if(response.status=== 200){
-            history.push("/AdminView");
+            history.push(`/campusView?username=${username}`);
         } else {
             alert("Invalid login attempt");
         };
