@@ -10,7 +10,7 @@ export const useDormWithDormId = (kollektivId) => {
     useEffect(() => {
         axios.get(`http://localhost:5000/api/kollektiv/${kollektivId}`)
             .then(response => {
-                if (response.data) {
+                if (response.data && response.data.length > 0) {
                     setDorm(response.data[0]);
                 }
             })
