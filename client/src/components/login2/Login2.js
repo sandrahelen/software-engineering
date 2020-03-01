@@ -21,14 +21,14 @@ export default function Login() {
 
   function signIn() {
 
-    const lookup = "http://localhost:5000/api/admin/login";
+    const lookup = "http://localhost:5000/api/user/login";
     axios.post(lookup,{
         "username": username,
         "password": password
     }).then(response => {
         console.log(response);
         if(response.status === 200){
-            history.push("/StudentView");
+            history.push(`/StudentView?username=${username}`);
         } else {
             alert("Invalid login attempt");
         };
