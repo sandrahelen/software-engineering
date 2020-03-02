@@ -27,7 +27,7 @@ const EditCleaningList = ({ showCleaningList, setShowCleaningList, cleaningListI
     };
 
     const deleteCleaningItem = (index) => {
-        newCleaningList.splice(index)
+        newCleaningList.splice(index, 1)
         axios.put(`http://localhost:5000/api/vaskeliste/${cleaningList._id}`,
             {
                 "liste": newCleaningList
