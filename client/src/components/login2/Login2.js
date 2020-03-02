@@ -84,14 +84,7 @@ export default function Login() {
           />
         </FormGroup>
           <Button
-            style={{
-              height: 35,
-              width: 70,
-              color: "green",
-              fontWicht: "bold",
-              borderRadius: 10,
-              fontSize: 20
-            }}
+            className="Login2__submit"
             type="submit"
             disabled={!isValidForm}
             onClick={signIn}
