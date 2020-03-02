@@ -41,7 +41,7 @@ const IndividualDorm = ({ dorm, render, setRender }) => {
     return (
         <div className="dormBody">
             <p>Romnummer: {dorm.kollektivnummer}</p>
-            <p onClick={() => setShowEditMembers(true)}>Medlemmer: {users.length}</p>
+            <p onClick={() => setShowEditMembers(true)} className="individualDorm__members">Medlemmer: {users.length}</p>
             <button
                 onClick={() => approve()}
                 className="approveButton">

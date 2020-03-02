@@ -27,6 +27,19 @@
     background-color: green;
 }
 
+.individualDorm__members {
+    cursor: pointer;
+    border: solid;
+    border-radius: 10px;
+    border-color:rgba(77, 161, 192, 0.8);
+    padding: 10px;
+}
+.individualDorm__members:hover {
+    background-color:rgba(77, 161, 192, 0.8);
+    color: white;
+    border-color:rgba(77, 161, 192, 0.8);
+}
+
 .individualDorm__delete {
     cursor: pointer;
     color: gray;

@@ -75,6 +75,9 @@ const AdminView = ({ location }) => {
                 >
                     Legg til kollektiv
                 </button>
+                <Link to="/">
+                    <button className="adminView__button" style={{backgroundColor: "gray"}}>Log ut</button>
+                </Link>
             </div>
             <EditCleaningList  showCleaningList={showCleaningList} setShowCleaningList={setShowCleaningList} cleaningListId={cleaningListId}/> 
             <AddDorm showAddDorm={showAddDorm} setShowAddDorm={setShowAddDorm} campusId={campusId} render={render} setRender={setRender} />
