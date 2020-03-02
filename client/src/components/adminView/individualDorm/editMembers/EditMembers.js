@@ -8,7 +8,6 @@ const EditMembers = ({ showEditMemebers, setShowEditMembers, members, setMembers
     const [newMemberFirstName, setNewMemberFirstName] = useState('');
     const [newMemberLastName, setNewMemberLastName] = useState('');
     const [render2, setRender2] = useState(false);
-
     const deleteMember = (id) => {
         axios.delete(`http://localhost:5000/api/user/${id}`)
             .then(() => {
@@ -20,7 +19,7 @@ const EditMembers = ({ showEditMemebers, setShowEditMembers, members, setMembers
     };
 
     const addMember = () => {
-        axios.post('http://localhost:5000/api/user',
+        axios.post('http://localhost:5000/api/user/register',
             {
                 "username": newMemberUsername,
                 "fornavn": newMemberFirstName,
