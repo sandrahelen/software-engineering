@@ -31,10 +31,10 @@ class FrontPage extends Component {
           <h4 className="FrontPage-intro">Hybelvask</h4>
           <div className="buttons">
             <Link to="LoginPage2">
-              <button style={this.styles}>Log in i mittkollektiv</button>
+              <button className="frontPage__button">Logg inn i mitt kollektiv</button>
             </Link>
             <Link to="LoginPage">
-              <button style={this.styles}>Logg inn som admin</button>
+              <button className="frontPage__button">Logg inn som admin</button>
             </Link>
           </div>
         </div>

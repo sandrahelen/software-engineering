@@ -23,9 +23,9 @@ const StudentView = ({ location }) => {
         axios.get('http://localhost:5000/api/user')
             .then(response => {
                 if (response.data) {
-                    let filteredUsers = response.data.filter(
+                    let filteredUser = response.data.find(
                         user => user.username === username)
-                    setUser(filteredUsers[0])
+                    setUser(filteredUser)
                 }
             })
             .catch((error) => {
@@ -33,12 +33,9 @@ const StudentView = ({ location }) => {
             })
     }, [location])
 
-
-
-    const dorm = useDormWithDormId(user._id);
+    const dorm = useDormWithDormId(user.kollektiv);
     const vaskelisteId = useCampusForStudentID(dorm.vaskeliste);
-    const { cleaningList, setCleaningList } = useCleaningList(vaskelisteId);
-    console.log(dorm)
+    const { cleaningList } = useCleaningList(vaskelisteId);
     return (
         <div className="studentView">
             <h1 className="studentView__header">Kollektiv Nr {dorm.kollektivnummer}</h1>

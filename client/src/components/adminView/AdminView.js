@@ -43,9 +43,9 @@ const AdminView = ({ location }) => {
     }, [campusId, render]);
     return (
         <div className="adminView__body">
-            <Link className="adminView__back" to={'CampusView'}>
+            {/* <Link className="adminView__back" to={'CampusView'}>
                 <p>Tilbake</p>
-            </Link>
+            </Link> */}
             <div className="adminView__header">
                 <h1>{campusName}</h1>
             </div>
