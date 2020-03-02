@@ -91,6 +91,7 @@ const EditMembers = ({ showEditMemebers, setShowEditMembers, members, setMembers
                                 setNewMemberFirstName('')
                                 setNewMemberLastName('')
                                 setRender(!render)
+                                setRender2(!render2)
                             }
                             }
                         >
