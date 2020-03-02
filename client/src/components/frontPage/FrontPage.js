@@ -27,7 +27,7 @@ class FrontPage extends Component {
             className="FrontPage-logo"
             alt="logo"
           />
-          <h3 className="FrontPage-title">Studentskipnaden i Fredrikstad</h3>
+          <h3 className="FrontPage-title">Studentsamskipnaden i Fredrikstad</h3>
           <h4 className="FrontPage-intro">Hybelvask</h4>
           <div className="buttons">
             <Link to="LoginPage2">
