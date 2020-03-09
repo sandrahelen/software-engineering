@@ -8,6 +8,7 @@ const EditMembers = ({ showEditMemebers, setShowEditMembers, members, setMembers
     const [newMemberFirstName, setNewMemberFirstName] = useState('');
     const [newMemberLastName, setNewMemberLastName] = useState('');
     const [render2, setRender2] = useState(false);
+
     const deleteMember = (id) => {
         axios.delete(`http://localhost:5000/api/user/${id}`)
             .then(() => {
@@ -29,12 +30,13 @@ const EditMembers = ({ showEditMemebers, setShowEditMembers, members, setMembers
                 "kollektiv": dormId,
             })
             .then(response => {
+                setRender(!render)
+                setRender2(!render2)
             })
             .catch((error) => {
                 console.log(error);
             })
     };
-
     return (
         <div className={showEditMemebers ? 'editMembers__overlay' : ''}>
             {showEditMemebers && (
@@ -90,8 +92,6 @@ const EditMembers = ({ showEditMemebers, setShowEditMembers, members, setMembers
                                 setNewMemberUsername('')
                                 setNewMemberFirstName('')
                                 setNewMemberLastName('')
-                                setRender(!render)
-                                setRender2(!render2)
                             }
                             }
                         >

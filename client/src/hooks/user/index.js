@@ -1,20 +1,22 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-export const useUser = (dormId) => {
+export const useUsers = () => {
     const [users, setUsers] = useState([]);
+    const [url, setUrl] = useState('http://localhost:5000/api/user');
+
     useEffect(() => {
-        axios.get('http://localhost:5000/api/user')
-            .then(response => {
-                if (response.data) {
-                    let filteredUsers = response.data.filter(
-                        user => user.kollektiv === dormId)
-                    setUsers(filteredUsers)
-                }
-            })
-            .catch((error) => {
-                console.log(error);
-            })
-    }, [dormId]);
-    return { users, setUsers };
+        const fetchData = async () => {
+            try {
+                const result = await axios(url);
+
+                setUsers(result.data);
+            } catch (error){
+                console.log(error)
+            }
+        };
+        fetchData();
+    }, [url]);
+    return [{ users, setUsers }, setUrl];
 }
+

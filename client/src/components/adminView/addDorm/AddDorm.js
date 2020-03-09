@@ -46,9 +46,9 @@ const AddDorm = ({ showAddDorm, setShowAddDorm, campusId ,render, setRender}) =>
                         type="button"
                         className="addDorm__submit"
                         onClick={() => {
-                            setDormNr('');
                             setShowAddDorm(false)
                             addDorm()
+                            setDormNr('');
                             }
                         }
                     >

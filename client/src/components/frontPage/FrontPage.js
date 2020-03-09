@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./FrontPage.css";
 import logo from "./hybelvask.svg";
 import { Link } from "react-router-dom";
-import { blue } from "color-name";
 
 class FrontPage extends Component {
   styles = {

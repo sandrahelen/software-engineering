@@ -19,9 +19,11 @@ const AdminView = ({ location }) => {
 
     //hook for å vise addDormcomponenten
     const [showAddDorm, setShowAddDorm] = useState(false)
+    //hook for å vise cleaninglisten
     const [showCleaningList, setShowCleaningList] = useState(false)
 
     useEffect(() => {
+        //henter campusdata fra urlen
         const { campusId, campusName, cleaningListId } = queryString.parse(location.search);
         setCampusId(campusId);
         setcampusName(campusName);

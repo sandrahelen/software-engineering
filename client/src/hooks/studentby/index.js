@@ -1,22 +1,28 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-export const useCampuses = (adminId) => {
+export const useCampuses = () => {
     const [campuses, setCampuses] = useState([]);
+    const [url, setUrl] = useState('http://localhost:5000/api/studentby');
+
+    const [campusIsLoading, setCampusIsLoading] = useState(false);
+    const [campusIsError, setCampusIsError] = useState(false);
     useEffect(() => {
-        axios.get('http://localhost:5000/api/studentby')
-            .then(response => {
-                if (response.data) {
-                    //filter alle studentbyer som blir styrt av en vaktmester, men har nå bare en dummystudentbyid
-                    console.log(response.data)
-                    let filteredCampuses = response.data.filter(campus => campus.admin === adminId)
-                    setCampuses(filteredCampuses);
-                }
-            })
-            .catch((error) => {
-                console.log(error);
-            })
-    }, [adminId]);
-    return { campuses, setCampuses};
+        const fetchData = async () => {
+            setCampusIsError(false);
+            setCampusIsLoading(false);
+            try {
+                const result = await axios(url);
+
+                setCampuses(result.data);
+            } catch (error){
+                setCampusIsError(true);
+            }
+            setCampusIsLoading(false);
+        };
+        fetchData();
+    }, [url]);
+    return [{ campuses, campusIsLoading, campusIsError }, setUrl];
 }
+
 
