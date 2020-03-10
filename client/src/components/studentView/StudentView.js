@@ -3,7 +3,7 @@ import { useDormWithDormId } from "../../hooks/dormForStudentID";
 import { useCampusForStudentID } from "../../hooks/campusIdForUser";
 import { useCleaningList } from "../../hooks/vaskeliste";
 import { Link } from "react-router-dom";
-/*import SplitPane, { Pane } from 'react-split-pane';*/
+import { useUser } from "../../hooks/user";
 import queryString from "query-string";
 import axios from "axios";
 import "./studentView.css";
@@ -36,10 +36,10 @@ const StudentView = ({ location }) => {
       });
   }, [location]);
 
-  const students = ["Kari", "Ole", "Trine", "Emma"];
   const dorm = useDormWithDormId(user.kollektiv);
   const vaskelisteId = useCampusForStudentID(dorm.vaskeliste);
   const { cleaningList } = useCleaningList(vaskelisteId);
+  const { users } = useUser(dorm._id);
   return (
     <div className="studentView">
       <h1 className="studentView__header">
@@ -48,13 +48,12 @@ const StudentView = ({ location }) => {
       <div className="studentView__body">
 				<div className="studentView__studentList">
           <p className="studentView__header3">Kollektivmedlemmer</p>
-          {students.map((listStudent, index) => (
+          {users.map((listStudent, index) => (
             <div className="studentView__students" key={index}>
-              {listStudent}
+              {listStudent.fornavn}
             </div>
           ))}
         </div>
-			<div className="studentView__space"></div>
 				<div className="studentView__cleaningList">
           <p className="studentView__header2">Vaskeliste</p>
           {cleaningList.liste.map((listItem, index) => (
@@ -66,7 +65,7 @@ const StudentView = ({ location }) => {
       </div>
       <div className="studentView__buttonWrapper">
         <Link to="/">
-          <button className="studentView__button">Log ut</button>
+          <button className="studentView__button">Logg ut</button>
         </Link>
       </div>
     </div>
