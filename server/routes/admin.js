@@ -66,26 +66,26 @@ router.post('/login', (req, res) => {
         })
 });
 
-
+//Sletter en admin med gitt ID
 router.delete('/:id', (req,res,next) => {
     Admin.findOneAndDelete({'_id':req.params.id})
         .then(data => res.json(data))
         .catch(next)
 });
-
+//Henter alle admin-objekter
 router.get('/', (req, res, next) => {
     Admin.find()
         .then(data => res.json(data))
         .catch(next)
 });
 
-
+//Henter admin med gitt ID
 router.get('/:id', (req, res, next) => {
     Admin.find({"_id": req.params.id})
         .then(data => res.json(data))
         .catch(next)
 });
-
+//Henter admin med gitt brukernavn
 router.get('/username/:username', (req, res, next) => {
     Admin.find({"username": req.params.username})
         .then(data => res.json(data))
