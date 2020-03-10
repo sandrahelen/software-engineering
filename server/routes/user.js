@@ -72,26 +72,26 @@ router.post('/login', (req, res) => {
         })
 });
 
-
+//Sletter en bruker med gitt ID
 router.delete('/:id', (req,res,next) => {
     User.findOneAndDelete({'_id':req.params.id})
         .then(data => res.json(data))
         .catch(next)
 });
-
+//Henter alle brukere
 router.get('/', (req, res, next) => {
     User.find()
         .then(data => res.json(data))
         .catch(next)
 });
 
-
+//Henter en bruker med gitt ID
 router.get('/:id', (req, res, next) => {
     User.find({"_id": req.params.id})
         .then(data => res.json(data))
         .catch(next)
 });
-
+//Henter en bruker med gitt brukernavn
 router.get('/username/:username', (req, res, next) => {
     User.find({"username": req.params.username})
         .then(data => res.json(data))
