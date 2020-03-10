@@ -12,9 +12,8 @@ const IndividualDorm = ({ dorm, render, setRender }) => {
     const [showEditMemebers, setShowEditMembers] = useState(false);
     const { cleaningList } = useCleaningList(dorm.vaskeliste);
     const { users, setUsers } = useUser(dorm._id);
-    console.log(dorm)
+    const [approved, setApproved] = useState(dorm.godkjentVask);
     useEffect(() => {
-        console.log("test")
         axios.get('http://localhost:5000/api/user')
             .then(response => {
                 if (response.data) {
@@ -30,18 +29,17 @@ const IndividualDorm = ({ dorm, render, setRender }) => {
 
     const approve = () => {
         axios.put(`http://localhost:5000/api/kollektiv/${dorm._id}`,
-        {
-            "godkjentVask": !dorm.godkjentVask,
-        }
+            {
+                "godkjentVask": !approved,
+            }
         )
-        .then(response => {
-            console.log(response)
-        })
-        .catch((error) => {
-            console.log(error);
-        })
+            .then(() => {
+                setApproved(!approved)
+            })
+            .catch((error) => {
+                console.log(error);
+            })
         setRender(!render);
-        alert(`Kollektivet er ${!dorm.godkjentVask? "godkjent" : "underkjent"}`)
     }
     const deleteDorm = (id) => {
         axios.delete(`http://localhost:5000/api/kollektiv/${id}`)
@@ -55,14 +53,14 @@ const IndividualDorm = ({ dorm, render, setRender }) => {
     };
     return (
         <div className="dormBody">
-            {dorm.godkjentVask ? 
-                <FaRegCheckCircle className="check"/>
+            {approved ?
+                <FaRegCheckCircle className="check" />
                 :
-                <FaRegWindowClose className="cross"/>
+                <FaRegWindowClose className="cross" />
             }
             <p>Romnummer: {dorm.kollektivnummer}</p>
             <p onClick={() => setShowEditMembers(true)} className="individualDorm__members">Medlemmer: {users.length}</p>
-            {dorm.godkjentVask ?
+            {approved ?
 
                 <button
                     onClick={() => approve()}
