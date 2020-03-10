@@ -5,7 +5,7 @@ const KollektivSchema = new Schema({
     kollektivnummer: {type: Number, required: true},
     studentby: {type: Schema.Types.ObjectId, ref: "Studentby", required: true},
     godkjentVask: {type: Boolean, ref: "godkjentVask", default: false},
-    checkBoxes: {type: Array[Boolean]}
+    checkBoxes: {type: Array(Boolean)}
 })
 
 const Kollektiv= mongoose.model('Kollektiv', KollektivSchema);
