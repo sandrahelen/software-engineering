@@ -1,52 +1,36 @@
 .studentView{
+    background-color: #ffffff;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     font-size: calc(10px + 2vmin);
-    border-style: solid;
+    color: #000000;
   }
-.studentView__header {
-  margin-top: 100px;
-  color: rgba(77, 161, 192, 0.8);
-}
-.studentView__body {
-  background-color:whitesmoke;
-  border-radius: 10px;
-  padding: 50px;
-  width: 60vw;
-  height: 50vh;
-}
-
-
-.studentView__cleaningList {
+.studentView-title {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px;
+  justify-content: center;
+  font-size: calc(20px + 1vmin);
+  color: #000000;
+  margin: 20px;
 }
-
-.studentView__buttonWrapper {
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-  bottom: 50px;
-}
-
-.studentView__button {
-    width: 100%;
-    background-color: rgb(0, 162, 255);
-    color: #fff !important;
-    border: 1px solid transparent;
-    margin-right: 5px;
-    margin-top: 10px;
-    font-weight: bold;
-    font-size: 13px !important;
-    line-height: 17px;
-    padding: 18px;
-    display: inline-block;
-    white-space: nowrap;
-    border-radius: 3px !important;
-    text-decoration: none !important;
+  .taskList {
+    list-style-type: none;
     cursor: pointer;
-}
+    align-items: center;
+  }
+
+
+  .add-project__plus {
+    color:white;
+    font-size: 18px;
+  }
+
+  .add-project__text {
+    display: inline-block;
+    color: white;
+    font-size: 18px;
+  }

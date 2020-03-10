@@ -22,17 +22,17 @@ export default function Login() {
   function signIn() {
 
     const lookup = "http://localhost:5000/api/user/login";
-    axios.post(lookup,{
+    axios.post(lookup,{//Gjør en post request til lookup adressen med brukernavn og passord som payload
         "username": username,
         "password": password
     }).then(response => {
         console.log(response);
-        if(response.status === 200){
+        if(response.status === 200){//Hvis responsen fra serveren er OK så redirecter den deg til Studentviewet
             history.push(`/StudentView?username=${username}`);
         } else {
             alert("Invalid login attempt");
         };
-    }).catch(e => {
+    }).catch(e => { //Hvis login er feil så vil man få svar 400 fra serveren og ikke få tilgang
           console.log(e);
           alert("Invalid Login");
     })
