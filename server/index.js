@@ -14,7 +14,7 @@ const app = express();
 
 //Må bruke cors siden server og frontend kjører på forskjellige porter
 app.use(cors());
-
+//TODO Add Portnumber in config file
 const port = process.env.PORT || 5000;
 
 //TODO Add mongoose link in .env file
