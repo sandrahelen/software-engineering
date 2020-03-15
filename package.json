@@ -1,7 +1,7 @@
 {
   "scripts": {
+    "start": "cd server && npm start",
     "heroku-prebuild": "cd server && npm install && npm run build",
-    "start": "cd server && npm start"
   },
   "dependencies": {
     "react-split-pane": "^0.1.89"
