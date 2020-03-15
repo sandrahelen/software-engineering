@@ -4,7 +4,7 @@ import axios from 'axios';
 export const useUser = (dormId) => {
     const [users, setUsers] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:5000/api/user')
+        axios.get('${API_URL}L/user')
             .then(response => {
                 if (response.data) {
                     let filteredUsers = response.data.filter(

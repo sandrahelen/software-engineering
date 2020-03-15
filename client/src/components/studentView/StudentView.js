@@ -7,6 +7,8 @@ import { useUser } from "../../hooks/user";
 import queryString from "query-string";
 import axios from "axios";
 import "./studentView.css";
+import { API_URL } from '../../URLs'
+
 
 const StudentView = ({ location }) => {
   const { username } = queryString.parse(location.search);
@@ -22,7 +24,7 @@ const StudentView = ({ location }) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/user")
+      .get(`${API_URL}/user`)
       .then(response => {
         if (response.data) {
           let filteredUser = response.data.find(

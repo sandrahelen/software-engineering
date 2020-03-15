@@ -3,6 +3,8 @@ import axios from 'axios';
 import { FaTrashAlt } from 'react-icons/fa';
 import { useCleaningList } from '../../../hooks/vaskeliste';
 import './EditCleaningList.css';
+import { API_URL } from '../../../URLs';
+
 
 const EditCleaningList = ({ showCleaningList, setShowCleaningList, cleaningListId }) => {
     const { cleaningList, setCleaningList } = useCleaningList(cleaningListId);
@@ -13,7 +15,7 @@ const EditCleaningList = ({ showCleaningList, setShowCleaningList, cleaningListI
 
     const addCleaningItem = (newCleaningItem) => {
         newCleaningList.push(newCleaningItem);
-        axios.put(`http://localhost:5000/api/vaskeliste/${cleaningList._id}`,
+        axios.put(`${API_URL}/vaskeliste/${cleaningList._id}`,
             {
                 "liste": newCleaningList
             }
@@ -28,7 +30,7 @@ const EditCleaningList = ({ showCleaningList, setShowCleaningList, cleaningListI
 
     const deleteCleaningItem = (index) => {
         newCleaningList.splice(index, 1)
-        axios.put(`http://localhost:5000/api/vaskeliste/${cleaningList._id}`,
+        axios.put(`${API_URL}L/vaskeliste/${cleaningList._id}`,
             {
                 "liste": newCleaningList
             }

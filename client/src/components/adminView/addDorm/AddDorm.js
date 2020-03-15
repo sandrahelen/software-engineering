@@ -6,7 +6,7 @@ const AddDorm = ({ showAddDorm, setShowAddDorm, campusId ,render, setRender}) =>
     const [dormNr, setDormNr] = useState('');
 
     const addDorm = () => {
-        axios.post('http://localhost:5000/api/kollektiv',
+        axios.post('${API_URL}L/kollektiv',
             {
                 "kollektivnummer": dormNr,
                 "studentby": campusId,

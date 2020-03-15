@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { API_URL } from '../../URLs'
 
 export const useCampusForStudentID = (campusId) => {
     const [campus, setCampus] = useState({
@@ -8,7 +9,7 @@ export const useCampusForStudentID = (campusId) => {
         vaskeliste: "5e552a301c9d440000a0d76a",
         _id: "5e552a781c9d440000a0d76b"});
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/studentby/${campusId}`)
+        axios.get(`${API_URL}L/studentby/${campusId}`)
             .then(response => {
                 if (response.data) {
                     setCampus(response.data[0]);

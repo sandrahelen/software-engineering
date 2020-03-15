@@ -7,6 +7,8 @@ import { FaTrashAlt } from 'react-icons/fa';
 import { FaRegCheckCircle } from 'react-icons/fa';
 import { FaRegWindowClose } from 'react-icons/fa';
 import './IndividualDorm.css';
+import { API_URL } from '../../../URLs';
+
 
 const IndividualDorm = ({ dorm, render, setRender }) => {
     const [showEditMemebers, setShowEditMembers] = useState(false);
@@ -14,7 +16,7 @@ const IndividualDorm = ({ dorm, render, setRender }) => {
     const { users, setUsers } = useUser(dorm._id);
     const [approved, setApproved] = useState(dorm.godkjentVask);
     useEffect(() => {
-        axios.get('http://localhost:5000/api/user')
+        axios.get(`${API_URL}/user`)
             .then(response => {
                 if (response.data) {
                     let filteredUsers = response.data.filter(
@@ -28,7 +30,7 @@ const IndividualDorm = ({ dorm, render, setRender }) => {
     }, [dorm._id, render]);
 
     const approve = () => {
-        axios.put(`http://localhost:5000/api/kollektiv/${dorm._id}`,
+        axios.put(`${API_URL}/kollektiv/${dorm._id}`,
             {
                 "godkjentVask": !approved,
             }
@@ -42,7 +44,7 @@ const IndividualDorm = ({ dorm, render, setRender }) => {
         setRender(!render);
     }
     const deleteDorm = (id) => {
-        axios.delete(`http://localhost:5000/api/kollektiv/${id}`)
+        axios.delete(`${API_URL}/kollektiv/${id}`)
             .then(() => {
                 setUsers(users.filter(member => member._id !== id));
                 setRender(!render);

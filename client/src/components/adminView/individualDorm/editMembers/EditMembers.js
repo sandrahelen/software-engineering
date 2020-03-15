@@ -2,6 +2,8 @@ import React, { useState} from 'react';
 import axios from 'axios';
 import { FaTrashAlt } from 'react-icons/fa';
 import './EditMembers.css';
+import { API_URL } from '../../../../URLs'
+
 
 const EditMembers = ({ showEditMemebers, setShowEditMembers, members, setMembers, dormId, render, setRender}) => {
     const [newMemberUsername, setNewMemberUsername] = useState('');
@@ -9,7 +11,7 @@ const EditMembers = ({ showEditMemebers, setShowEditMembers, members, setMembers
     const [newMemberLastName, setNewMemberLastName] = useState('');
     const [render2, setRender2] = useState(false);
     const deleteMember = (id) => {
-        axios.delete(`http://localhost:5000/api/user/${id}`)
+        axios.delete(`${API_URL}/user/${id}`)
             .then(() => {
                 setMembers(members.filter(member => member._id !== id));
             })
@@ -19,7 +21,7 @@ const EditMembers = ({ showEditMemebers, setShowEditMembers, members, setMembers
     };
 
     const addMember = () => {
-        axios.post('http://localhost:5000/api/user/register',
+        axios.post(`${API_URL}/user/register`,
             {
                 "username": newMemberUsername,
                 "fornavn": newMemberFirstName,

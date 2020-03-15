@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
+import { API_URL } from '../../URLs'
 import "./Login2.css";
 
 export default function Login() {
@@ -21,7 +22,7 @@ export default function Login() {
 
   function signIn() {
 
-    const lookup = "http://localhost:5000/api/user/login";
+    const lookup = `${API_URL}/user/login`;
     axios.post(lookup,{
         "username": username,
         "password": password

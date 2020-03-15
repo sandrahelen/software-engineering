@@ -3,13 +3,14 @@ import axios from "axios";
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import {useHistory } from "react-router-dom";
 import "./Login.css";
+import { API_URL } from '../../URLs'
+
 
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   let history = useHistory();
-
 
   function isValidForm() {
     return username.length >> 0 && password.length >> 0;
@@ -21,7 +22,7 @@ export default function Login() {
 
   function signIn() {
 
-    const lookup = "http://localhost:5000/api/admin/login";
+    const lookup = `${API_URL}/admin/login`;
     axios.post(lookup,{
         "username": username,
         "password": password

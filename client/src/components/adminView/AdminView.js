@@ -6,6 +6,7 @@ import AddDorm from './addDorm/AddDorm';
 import './AdminView.css';
 import { Link } from 'react-router-dom';
 import EditCleaningList from './editCleaningList/EditCleaningList';
+import { API_URL } from '../../URLs'
 
 
 const AdminView = ({ location }) => {
@@ -29,7 +30,7 @@ const AdminView = ({ location }) => {
     }, [location])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/kollektiv')
+        axios.get(`${API_URL}/kollektiv`)
             .then(response => {
                 if (response.data) {
                     //filtrer så bare kollektivene i riktig studentby vises

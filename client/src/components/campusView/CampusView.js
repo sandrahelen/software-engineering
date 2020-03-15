@@ -3,6 +3,8 @@ import queryString from 'query-string';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useCampuses } from '../../hooks/studentby';
+import { API_URL } from '../../URLs'
+
 import './CampusView.css'
 
 const CampusView = ({ location }) => {
@@ -16,7 +18,7 @@ const CampusView = ({ location }) => {
     const { username } = queryString.parse(location.search);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/admin')
+        axios.get(`${API_URL}/admin`)
             .then(response => {
                 if (response.data) {
                     let filteredadmin = response.data.find(

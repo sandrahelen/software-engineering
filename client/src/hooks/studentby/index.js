@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { API_URL } from '../../URLs'
+
 
 export const useCampuses = (adminId) => {
     const [campuses, setCampuses] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:5000/api/studentby')
+        axios.get(`${API_URL}/studentby`)
             .then(response => {
                 if (response.data) {
                     //filter alle studentbyer som blir styrt av en vaktmester, men har nå bare en dummystudentbyid

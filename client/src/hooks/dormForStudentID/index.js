@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { API_URL } from '../../URLs'
 
 export const useDormWithDormId = (kollektivId) => {
     const [dorm, setDorm] = useState({
@@ -8,7 +9,7 @@ export const useDormWithDormId = (kollektivId) => {
         _id: "",
     });
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/kollektiv/${kollektivId}`)
+        axios.get(`${API_URL}/kollektiv/${kollektivId}`)
             .then(response => {
                 if (response.data && response.data.length > 0) {
                     setDorm(response.data[0]);
