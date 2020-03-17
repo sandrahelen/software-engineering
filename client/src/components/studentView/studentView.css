@@ -17,17 +17,17 @@
 .studentView__body {
   background-color: whitesmoke;
   border-radius: 10px;
-  padding: 50px;
+  padding: 45px;
   width: 60vw;
   height: 50vh;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
 }
 
 .studentView__cleaningList {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
-  align-items: left;
+  align-items: right;
   margin: 10px;
   font-size: calc(9px + 2vmin);
   font-weight: bold;
@@ -42,7 +42,7 @@
   flex-direction: column;
   align-items: left;
   margin: 10px;
-  width: 200;
+  width: 20em;
   font-weight: bold;
   font-size: calc(9px + 2vmin);
   border-radius: 10px;
@@ -53,16 +53,17 @@
 }
 
 .studentView__buttonWrapper {
-  position: absolute;
+  position: center;
   left: 50%;
-  -webkit-transform: translate(-50%, 0);
+  /* -webkit-transform: translate(-50%, 0);
+ */
+  justify-content: center;
   bottom: 50px;
 }
 
 .studentView__button {
-  width: 100%;
   color: #fff !important;
-  align-items: left;
+  size: 30px;
   border: 1px solid transparent;
   margin-right: 20px;
   font-weight: bold;
