@@ -46,15 +46,20 @@ const StudentView = ({ location }) => {
         Kollektiv Nr {dorm.kollektivnummer}
       </h1>
       <div className="studentView__body">
-				<div className="studentView__studentList">
-          <p className="studentView__header3">Kollektivmedlemmer</p>
+        <div className="studentView__studentList">
+          <p
+            style={{ height: 28, width: 300 }}
+            className="studentView__header3"
+          >
+            Kollektivmedlemmer
+          </p>
           {users.map((listStudent, index) => (
             <div className="studentView__students" key={index}>
               {listStudent.fornavn}
             </div>
           ))}
         </div>
-				<div className="studentView__cleaningList">
+        <div className="studentView__cleaningList">
           <p className="studentView__header2">Vaskeliste</p>
           {cleaningList.liste.map((listItem, index) => (
             <div className="studentView__listItem" key={index}>
@@ -65,7 +70,12 @@ const StudentView = ({ location }) => {
       </div>
       <div className="studentView__buttonWrapper">
         <Link to="/">
-          <button className="studentView__button">Logg ut</button>
+          <button
+            className="studentView__button"
+            style={{ backgroundColor: "gray" }}
+          >
+            Logg ut
+          </button>
         </Link>
       </div>
     </div>
