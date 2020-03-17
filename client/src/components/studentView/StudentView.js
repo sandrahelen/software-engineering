@@ -47,7 +47,7 @@ const StudentView = ({ location }) => {
       </h1>
       <div className="studentView__body">
 				<div className="studentView__studentList">
-          <p className="studentView__header3">Kollektivmedlemmer</p>
+          <p className="studentView__header2">Kollektivmedlemmer</p>
           {users.map((listStudent, index) => (
             <div className="studentView__students" key={index}>
               {listStudent.fornavn}
@@ -55,7 +55,7 @@ const StudentView = ({ location }) => {
           ))}
         </div>
 				<div className="studentView__cleaningList">
-          <p className="studentView__header2">Vaskeliste</p>
+          <p className="studentView__header3">Vaskeliste</p>
           {cleaningList.liste.map((listItem, index) => (
             <div className="studentView__listItem" key={index}>
               {listItem}
