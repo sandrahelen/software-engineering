@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { FaTrashAlt } from 'react-icons/fa';
-import { useCleaningList } from '../../../hooks/vaskeliste';
 import './EditCleaningList.css';
 
-const EditCleaningList = ({ showCleaningList, setShowCleaningList, cleaningListId }) => {
-    const { cleaningList, setCleaningList } = useCleaningList(cleaningListId);
+const EditCleaningList = ({ cleaningList, showCleaningList, setShowCleaningList}) => {
+    
     const [newCleaningItem, setNewCleaningItem] = useState('');
     const [render, setRender] = useState(false);
 

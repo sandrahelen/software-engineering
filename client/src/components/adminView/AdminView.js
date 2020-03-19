@@ -6,14 +6,16 @@ import AddDorm from './addDorm/AddDorm';
 import './AdminView.css';
 import { Link } from 'react-router-dom';
 import EditCleaningList from './editCleaningList/EditCleaningList';
+import { useCleaningList } from '../../hooks/vaskeliste';
+
 
 
 const AdminView = ({ location }) => {
     const [dorms, setDorms] = useState([]);
     const [campusId, setCampusId] = useState();
     const [campusName, setcampusName] = useState();
-    const [cleaningListId, setCleaningListId] = useState();
-
+    //henter cleaninglisten med IDen som kommer fra urlen
+    const { cleaningList, setCleaningList } = useCleaningList(queryString.parse(location.search).cleaningListId);
     //hook for å rerendre kollektivene etter å ha lagt til et nytt
     const [render, setRender] = useState(false);
 
@@ -22,10 +24,9 @@ const AdminView = ({ location }) => {
     const [showCleaningList, setShowCleaningList] = useState(false)
 
     useEffect(() => {
-        const { campusId, campusName, cleaningListId } = queryString.parse(location.search);
+        const { campusId, campusName} = queryString.parse(location.search);
         setCampusId(campusId);
         setcampusName(campusName);
-        setCleaningListId(cleaningListId);
     }, [location])
 
     useEffect(() => {
@@ -43,9 +44,6 @@ const AdminView = ({ location }) => {
     }, [campusId, render]);
     return (
         <div className="adminView__body">
-            {/* <Link className="adminView__back" to={'CampusView'}>
-                <p>Tilbake</p>
-            </Link> */}
             <div className="adminView__header">
                 <h1>{campusName}</h1>
             </div>
@@ -79,8 +77,8 @@ const AdminView = ({ location }) => {
                     <button className="adminView__button" style={{backgroundColor: "gray"}}>Log ut</button>
                 </Link>
             </div>
-            <EditCleaningList  showCleaningList={showCleaningList} setShowCleaningList={setShowCleaningList} cleaningListId={cleaningListId}/> 
-            <AddDorm showAddDorm={showAddDorm} setShowAddDorm={setShowAddDorm} campusId={campusId} render={render} setRender={setRender} />
+            <EditCleaningList  cleaningList={cleaningList} showCleaningList={showCleaningList} setShowCleaningList={setShowCleaningList} /> 
+            <AddDorm showAddDorm={showAddDorm} setShowAddDorm={setShowAddDorm} campusId={campusId} render={render} setRender={setRender} cleaningList={cleaningList.liste}/>
         </div>
     )
 }

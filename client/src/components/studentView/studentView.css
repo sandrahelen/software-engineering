@@ -19,9 +19,10 @@
   border-radius: 10px;
   padding: 50px;
   width: 60vw;
-  height: 50vh;
+  min-height: 50vh;
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
 
 .studentView__cleaningList {
@@ -29,6 +30,7 @@
   flex-direction: column;
   align-items: left;
   margin: 10px;
+  padding: 30px;
   font-size: calc(9px + 2vmin);
   font-weight: bold;
   border-radius: 10px;
@@ -42,6 +44,7 @@
   flex-direction: column;
   align-items: left;
   margin: 10px;
+  padding: 30px;
   width: 200;
   font-weight: bold;
   font-size: calc(9px + 2vmin);
@@ -50,6 +53,10 @@
   width: 10em;
   margin-right: 60px;
   margin-bottom: 60px;
+}
+.studentView__listItems {
+  display: flex;
+  flex-direction: column;
 }
 
 .studentView__buttonWrapper {

@@ -6,17 +6,21 @@ export const useCampusForStudentID = (campusId) => {
         admin: "",
         navn: "",
         vaskeliste: "5e552a301c9d440000a0d76a",
-        _id: "5e552a781c9d440000a0d76b"});
+        _id: "5e552a781c9d440000a0d76b"
+    });
+
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/studentby/${campusId}`)
-            .then(response => {
-                if (response.data) {
-                    setCampus(response.data[0]);
-                }
-            })
-            .catch((error) => {
-                console.log(error);
-            })
+        if (campusId) {
+            axios.get(`http://localhost:5000/api/studentby/${campusId}`)
+                .then(response => {
+                    if (response.data) {
+                        setCampus(response.data[0]);
+                    }
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
+        }
     }, [campusId]);
     return campus.vaskeliste;
 }

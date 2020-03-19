@@ -3,6 +3,8 @@ import axios from 'axios';
 
 export const useDormWithDormId = (kollektivId) => {
     const [dorm, setDorm] = useState({
+        godkjentVask: false,
+        checkBoxes: [],
         kollektivnummer: null,
         studentby: "",
         _id: "",
