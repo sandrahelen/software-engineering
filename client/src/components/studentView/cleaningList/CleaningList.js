@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import CheckBox from "../checkBox/CheckBox";
+import CheckBox from "./checkBox/CheckBox";
 import axios from "axios";
 import "./cleaningList.css";
 
