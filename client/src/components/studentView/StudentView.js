@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useDormWithDormId } from "../../hooks/dormForStudentID";
 import { useCampusForStudentID } from "../../hooks/campusIdForUser";
 import { useCleaningList } from "../../hooks/vaskeliste";
-import { Link } from "react-router-dom";
 import { useUser } from "../../hooks/user";
+import { Link } from "react-router-dom";
+import CleaningList from "./cleaningList/CleaningList";
 import queryString from "query-string";
 import axios from "axios";
 import "./studentView.css";
@@ -19,6 +20,11 @@ const StudentView = ({ location }) => {
     __v: 0,
     _id: ""
   });
+
+  const dorm = useDormWithDormId(user.kollektiv);
+  const vaskelisteId = useCampusForStudentID(dorm.vaskeliste);
+  const { cleaningList } = useCleaningList(vaskelisteId);
+  const { users } = useUser(dorm._id);
 
   useEffect(() => {
     axios
@@ -36,10 +42,7 @@ const StudentView = ({ location }) => {
       });
   }, [location]);
 
-  const dorm = useDormWithDormId(user.kollektiv);
-  const vaskelisteId = useCampusForStudentID(dorm.vaskeliste);
-  const { cleaningList } = useCleaningList(vaskelisteId);
-  const { users } = useUser(dorm._id);
+
   return (
     <div className="studentView">
       <h1 className="studentView__header">
@@ -59,14 +62,10 @@ const StudentView = ({ location }) => {
             </div>
           ))}
         </div>
-        <div className="studentView__cleaningList">
-          <p className="studentView__header2">Vaskeliste</p>
-          {cleaningList.liste.map((listItem, index) => (
-            <div className="studentView__listItem" key={index}>
-              {listItem}
-            </div>
-          ))}
-        </div>
+        {cleaningList.liste && dorm.checkBoxes &&
+          <div className="studentView__cleaningList">
+            <CleaningList cleaningList={cleaningList.liste} checkList={dorm.checkBoxes} kollektivId={dorm._id} />
+          </div>}
       </div>
       <div className="studentView__buttonWrapper">
         <Link to="/">
