@@ -1,14 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './AddDorm.css';
 
-const AddDorm = ({ showAddDorm, setShowAddDorm, campusId ,render, setRender}) => {
+const AddDorm = ({ showAddDorm, setShowAddDorm, campusId ,render, setRender, cleaningList}) => {
     const [dormNr, setDormNr] = useState('');
+    const [checkList, setCheckList] = useState([]);
+    
+    useEffect(() => {
+        if (cleaningList) {
+            const list = cleaningList.map(item => false)
+            setCheckList(list)
+        }
+    }, [cleaningList])
 
     const addDorm = () => {
         axios.post('http://localhost:5000/api/kollektiv',
             {
+                "godkjentVask": false,
                 "kollektivnummer": dormNr,
+                "checkBoxes": checkList,
                 "studentby": campusId,
                 "__v": 0,
                 "vaskeliste": "5e4beb3a651bf53950f51dff"
@@ -20,7 +30,6 @@ const AddDorm = ({ showAddDorm, setShowAddDorm, campusId ,render, setRender}) =>
                 console.log(error);
             })
     }
-
     return (
         <div className={showAddDorm ? 'addDorm__overlay' : ''}>
             {showAddDorm && (
