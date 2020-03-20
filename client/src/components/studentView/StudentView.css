@@ -10,12 +10,7 @@
   }
 .studentView-title {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(20px + 1vmin);
-  color: #000000;
-  margin: 20px;
 }
   .taskList {
     list-style-type: none;
