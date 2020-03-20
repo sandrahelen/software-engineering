@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import EditMembers from './editMembers/EditMembers';
 import { useUser } from '../../../hooks/user';
-import { useCleaningList } from '../../../hooks/vaskeliste';
 import { FaTrashAlt } from 'react-icons/fa';
 import { FaRegCheckCircle } from 'react-icons/fa';
 import { FaRegWindowClose } from 'react-icons/fa';
@@ -10,7 +9,6 @@ import './IndividualDorm.css';
 
 const IndividualDorm = ({ dorm, render, setRender }) => {
     const [showEditMemebers, setShowEditMembers] = useState(false);
-    const { cleaningList } = useCleaningList(dorm.vaskeliste);
     const { users, setUsers } = useUser(dorm._id);
     const [approved, setApproved] = useState(dorm.godkjentVask);
     useEffect(() => {

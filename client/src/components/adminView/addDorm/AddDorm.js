@@ -8,11 +8,11 @@ const AddDorm = ({ showAddDorm, setShowAddDorm, campusId ,render, setRender, cle
     
     useEffect(() => {
         if (cleaningList) {
-            const list = cleaningList.map(item => false)
+            const list = cleaningList.liste.map(item => false)
             setCheckList(list)
         }
     }, [cleaningList])
-
+   
     const addDorm = () => {
         axios.post('http://localhost:5000/api/kollektiv',
             {
@@ -30,6 +30,7 @@ const AddDorm = ({ showAddDorm, setShowAddDorm, campusId ,render, setRender, cle
                 console.log(error);
             })
     }
+   
     return (
         <div className={showAddDorm ? 'addDorm__overlay' : ''}>
             {showAddDorm && (

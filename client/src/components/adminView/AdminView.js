@@ -30,7 +30,8 @@ const AdminView = ({ location }) => {
     }, [location])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/kollektiv')
+        if (campusId) {
+            axios.get('http://localhost:5000/api/kollektiv')
             .then(response => {
                 if (response.data) {
                     //filtrer så bare kollektivene i riktig studentby vises
@@ -41,7 +42,9 @@ const AdminView = ({ location }) => {
             .catch((error) => {
                 console.log(error);
             })
+        }
     }, [campusId, render]);
+
     return (
         <div className="adminView__body">
             <div className="adminView__header">
@@ -77,8 +80,8 @@ const AdminView = ({ location }) => {
                     <button className="adminView__button" style={{backgroundColor: "gray"}}>Log ut</button>
                 </Link>
             </div>
-            <EditCleaningList  cleaningList={cleaningList} showCleaningList={showCleaningList} setShowCleaningList={setShowCleaningList} /> 
-            <AddDorm showAddDorm={showAddDorm} setShowAddDorm={setShowAddDorm} campusId={campusId} render={render} setRender={setRender} cleaningList={cleaningList.liste}/>
+            <EditCleaningList  dorms={dorms} cleaningList={cleaningList} setCleaningList={setCleaningList} showCleaningList={showCleaningList} setShowCleaningList={setShowCleaningList} /> 
+            <AddDorm showAddDorm={showAddDorm} setShowAddDorm={setShowAddDorm} campusId={campusId} render={render} setRender={setRender} cleaningList={cleaningList}/>
         </div>
     )
 }
