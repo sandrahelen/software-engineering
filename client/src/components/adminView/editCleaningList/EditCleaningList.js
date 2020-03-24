@@ -26,6 +26,23 @@ const EditCleaningList = ({ dorms, cleaningList, setCleaningList, showCleaningLi
     };
     
     
+    
+    const deleteCleaningItem = (index) => {
+        newCleaningList.splice(index, 1)
+        setCleaningList({
+            _id: cleaningList._id,
+            liste: newCleaningList
+        })
+        editCheckBoxFromDorm(index, true)
+        updateCleaningList(cleaningList._id, newCleaningList)
+        .then(response => {
+            //console.log(response)
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+    };
+    
     //metode for å slette eller legge til checkboxer, true er å slette, false er lege til
     const editCheckBoxFromDorm = (index, bool) => {
         let checkBoxList;
@@ -45,24 +62,7 @@ const EditCleaningList = ({ dorms, cleaningList, setCleaningList, showCleaningLi
         }
     }
     
-    const deleteCleaningItem = (index) => {
-        newCleaningList.splice(index, 1)
-        setCleaningList({
-            _id: cleaningList._id,
-            liste: newCleaningList
-        })
-        editCheckBoxFromDorm(index, true)
-        updateCleaningList(cleaningList._id, newCleaningList)
-            .then(response => {
-                //console.log(response)
-            })
-            .catch((error) => {
-                console.log(error);
-            })
-    };
-
     const updateCheckboxList = async (dormId, checkBoxList) => {
-        console.log(dormId, ": ", checkBoxList)
         const response = await axios.patch(`http://localhost:5000/api/kollektiv/${dormId}`,
         {
             "checkBoxes": checkBoxList
