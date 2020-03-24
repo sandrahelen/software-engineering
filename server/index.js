@@ -17,7 +17,6 @@ app.use(cors());
 //TODO Add Portnumber in config file
 //Setter porten backend kjører på til 5000 eller den porten vi velger for å hoste nettsiden på
 const port = process.env.PORT || 5000;
-
 //TODO Add mongoose link in .env file
 //Kobler opp mot MongoDB databasen
 mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://fredrik:12345@pu48-e21uc.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })

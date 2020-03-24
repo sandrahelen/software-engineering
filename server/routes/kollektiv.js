@@ -33,7 +33,19 @@ router.put('/:id', (req, res, next) => {
     }
 
 });
+//test
+router.patch('/:id', (req, res, next) => {
+    if(Kollektiv.find({"_id": req.params.id})){
+        Kollektiv.updateOne(req.body)
+            .then(data => res.json(data))
+            .catch(next)
+    }else {
+        res.json({
+            error: "Kollektiv does not exist"
+        })
+    }
 
+});
 
 //Legger til et nytt kollektiv
 //TODO Trenger kanskje ikke denne
