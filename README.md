@@ -18,7 +18,7 @@ Prettier er ble brukt til å formatere koden, og ESlint ble brukt som linter. [Ha
 
 ## Screenshots
 #### Forside
-![picture](Screenshots/forside.jpg)
+![picture](Screenshots/forside.JPG)
 
 
 #### Admin View
@@ -28,11 +28,11 @@ Når man logger inn som admin møter man denne siden:
 
 #### Legge til kollektiv
 Som administrator kan man legge til kollektiv, og gi dette et nummer
-![picture](Screenshots/legge_til_kollektiv.JPG)
+![picture](Screenshots/legg_til_kollektiv.JPG)
 
 #### Legge til kollektivmedlemmer
 En admin kan legge til kollektivmedlemmer, med brukernavn, fornavn og etternavn
-![picture](Screenshots/legge_til_kollektiv.JPG)
+![picture](Screenshots/endre_kollektivmedlemmer.JPG)
 
 #### Endre vaskelisten
 I vinduet kan administratoren legge til eller fjerne oppgaver i vaskelisten
