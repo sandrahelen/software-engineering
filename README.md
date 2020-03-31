@@ -1,12 +1,12 @@
 # SiF hybelvask
 Enkleste vei til din vaskeliste!
 
-Gå til siden [her](https://sifvaskeliste.netlify.com/)
+GÃ¥ til siden [her](https://sifvaskeliste.netlify.com/)
 
 Legg inn pipeline status og coverage report?
 
 ## Motivasjon
-Det kan være vanskelig å holde oversikt over renholdet i en stor studentby. Det gjelder både for beboere og adminstrasjonen. De manuelle papirarkene blir glemt eller forsvinner, og det er vanskelig å holde oversikt. Studentsamskipnaden i Fredrikstad er i sterk vekst, og trengte sårt en ny og bedre løsning! Vår intuive nettside, skal gjøre det lett for alle involverte å holde oversikt over vaskelisten. Ingen flere unnskyldninger for sluntre unna en god vask!
+Det kan vÃ¦re vanskelig Ã¥ holde oversikt over renholdet i en stor studentby. Det gjelder bÃ¥de for beboere og adminstrasjonen. De manuelle papirarkene blir glemt eller forsvinner, og det er vanskelig Ã¥ holde oversikt. Studentsamskipnaden i Fredrikstad er i sterk vekst, og trengte sÃ¥rt en ny og bedre lÃ¸sning! VÃ¥r intuive nettside, skal gjÃ¸re det lett for alle involverte Ã¥ holde oversikt over vaskelisten. Ingen flere unnskyldninger for sluntre unna en god vask!
 
 
 ## Build Status
@@ -14,7 +14,7 @@ Legg inn pipeline status
 
 
 ## Kodestandard
-Prettier er ble brukt til å formatere koden, og ESlint ble brukt som linter. [Har dette skjedd?]
+Prettier er ble brukt til Ã¥ formatere koden, og ESlint ble brukt som linter. [Har dette skjedd?]
 
 ## Screenshots
 #### Forside
@@ -22,7 +22,7 @@ Prettier er ble brukt til å formatere koden, og ESlint ble brukt som linter. [Ha
 
 
 #### Admin View
-Når man logger inn som admin møter man denne siden:
+NÃ¥r man logger inn som admin mÃ¸ter man denne siden:
 ![picture](Screenshots/adminview.JPG)
 
 
@@ -47,7 +47,7 @@ I vinduet kan administratoren legge til eller fjerne oppgaver i vaskelisten
 - MongoDB
 
 ## Egenskaper
-Vaskesystemet er intuivt fra første møte, og har et enkelt og effektivt design. Alle funksjonene er lett tilgjengelig fra forsidene som møter beboere og administratorer.
+Vaskesystemet er intuivt fra fÃ¸rste mÃ¸te, og har et enkelt og effektivt design. Alle funksjonene er lett tilgjengelig fra forsidene som mÃ¸ter beboere og administratorer.
 
 ## Eksempelkode
 
@@ -72,14 +72,25 @@ const addCleaningItem = (newCleaningItem) => {
 ```
 
 ## Installasjon
-For å kjøre prosjektet trenger du
-- [Node.js] (https://nodejs.org)
+**For Ã¥ kjÃ¸re prosjektet**
+- Installer [Node.js](https://nodejs.org)
+- Ã…pne terminal og gÃ¥ til en mappe du vil lagre prosjektet. F.eks.: `cd Desktop/minMappe`
+- Skriv inn dette i terminalen for Ã¥ klone prosjektet: `git clone https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48.git`
+- Skriv `cd 48` for Ã¥ gÃ¥ inn i prosjektmappa, og `npm install` for Ã¥ installere alle nÃ¸dvendige komponenter
+- Ã…pne en ny fane av terminalen slik at du har 2 faner Ã¥pne
+- I fane 1 gÃ¥ inn i server-mappa: `cd server` og skriv `node index.js` for Ã¥ kjÃ¸re backend
+- I fane 2 gÃ¥ inn i klient-mappa: `cd client` og skriv `npm start` for Ã¥ kjÃ¸re frontend
 
-Last ned prosjektet fra gitlab som vist under
+**Innloggingsinformasjon**
+*  Kollektiv
+   - Brukernavn: `testUser`
+   - Passord: `12345`
+*  Admin
+   - Brukernavn: `fredrik`
+   - Passord: `12345`
 
-git clone https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48.git
-
-For å se nettsiden, gå inn på [https://sifvaskeliste.netlify.com/](https://sifvaskeliste.netlify.com/)
+**Alertnativt**
+*  GÃ¥ inn pÃ¥ [https://sifvaskeliste.netlify.com/](https://sifvaskeliste.netlify.com/)
 
 ## Testing
 [![coverage report]]
@@ -91,12 +102,12 @@ Se [wiki](https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48/-/wikis/Brukermanual) 
 
 
 ## Team
-- Edvard Dønvold Sjøborg
-- Fredrik Bjørnland
-- Oline Vikøren Zachariassen
+- Edvard DÃ¸nvold SjÃ¸borg
+- Fredrik BjÃ¸rnland
+- Oline VikÃ¸ren Zachariassen
 - Oscar Bergan
 - Sandra Helen Husnes
-- Johanne Øderud Vatne
+- Johanne Ã˜derud Vatne
 
 
 ## Lisens
