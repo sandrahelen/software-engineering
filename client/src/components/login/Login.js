@@ -47,7 +47,7 @@ export default function Login() {
               fontSize: 25
             }}
           >
-            Username:{" "}
+            Brukernavn:{" "}
           </FormLabel>
           <br />
           <FormControl
@@ -57,7 +57,7 @@ export default function Login() {
               fontSize: 20
             }}
             type="Username"
-            placeholder="Username"
+            placeholder="Brukernavn"
             value={username}
             onChange={e => setUsername(e.target.value)}
           />
@@ -68,7 +68,7 @@ export default function Login() {
               fontSize: 25
             }}
           >
-            Password:{" "}
+            Passord:{" "}
           </FormLabel>
           <br />
           <FormControl
@@ -78,7 +78,7 @@ export default function Login() {
               fontSize: 20
             }}
             type="password"
-            placeholder="Password"
+            placeholder="Passord"
             value={password}
             onChange={e => setPassword(e.target.value)}
           />

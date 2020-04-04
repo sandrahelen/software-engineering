@@ -69,7 +69,7 @@ const StudentView = ({ location }) => {
       </div>
       <div className="studentView__buttonWrapper">
         <Link to="/">
-          <button
+          <button 
             className="studentView__button"
             style={{ backgroundColor: "gray" }}
           >
