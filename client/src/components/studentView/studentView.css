@@ -61,9 +61,11 @@
 
 .studentView__buttonWrapper {
   position: absolute;
+  align-self: left;
   left: 50%;
   -webkit-transform: translate(-50%, 0);
   bottom: 50px;
+
 }
 
 .studentView__button {
