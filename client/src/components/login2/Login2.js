@@ -89,7 +89,7 @@ export default function Login() {
             disabled={!isValidForm}
             onClick={signIn}
           >
-            Login
+            Logg inn
           </Button>
       </form>
     </div>
