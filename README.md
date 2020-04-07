@@ -44,12 +44,11 @@ I vinduet kan administratoren legge til eller fjerne oppgaver i vaskelisten
 ![picture](Screenshots/endre_vaskeliste.JPG)
 
 
-## Rammeverk
-- React
-- Node.js med Express
-
-## Database
-- MongoDB
+## Teknologier og rammeverk
+- [React](https://reactjs.org) - Webrammeverk
+- [Node.js](https://nodejs.org/en/) - Runtime Environment
+- [Express](https://expressjs.com) - Webrammeverk
+- [MongoDB](https://www.mongodb.com) - Database
 
 ## Egenskaper
 Vaskesystemet er intuivt fra første møte, og har et enkelt og effektivt design. Alle funksjonene er lett tilgjengelig fra forsidene som møter beboere og administratorer.
