@@ -12,6 +12,8 @@ Det kan være vanskelig å holde oversikt over renholdet i en stor studentby. De
 ## Build Status
 Legg inn pipeline status
 
+[![pipeline status](https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48/badges/master/pipeline.svg)](https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48/-/commits/master)
+[![coverage report](https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48/badges/master/coverage.svg)](https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48/-/commits/master)
 
 ## Kodestandard
 Prettier er ble brukt til å formatere koden, og ESlint ble brukt som linter. [Har dette skjedd?]
