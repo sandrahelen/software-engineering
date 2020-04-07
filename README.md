@@ -105,7 +105,7 @@ For å kjøre test
 - Naviger til klient-mappa: `cd client`
 - Skriv inn kommandoen `npm test`
 
-####Eksempel på test-kode
+#### Eksempel på test-kode
 
 ```java
 jest.mock("axios");
