@@ -14,7 +14,6 @@ Det kan være vanskelig å holde oversikt over renholdet i en stor studentby. De
 ## Build Status
 
 [![pipeline status](https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48/badges/master/pipeline.svg)](https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48/-/commits/master)
-[![coverage report](https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48/badges/master/coverage.svg)](https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48/-/commits/master)
 
 ## Kodestandard
 Prettier er ble brukt til å formatere koden, og ESlint ble brukt som linter.
@@ -99,7 +98,7 @@ const dorm = useDormWithDormId(user.kollektiv);
 *  Gå inn på [https://sifvaskeliste.netlify.com/](https://sifvaskeliste.netlify.com/)
 
 ## Testing
-[![coverage report]]
+[![coverage report](https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48/badges/master/coverage.svg)](https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48/-/commits/master)
 
 - Naviger til klient-mappa: `cd client`
 - Skriv inn kommandoen `npm test`
