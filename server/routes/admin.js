@@ -70,6 +70,10 @@ router.post('/login', (req, res) => {
         })
 });
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d376aa0fe8275af99aacb3a2599765e76b3ab064
 //Sletter brukeren med den IDen i databasen
 router.delete('/:id', (req,res,next) => {
     Admin.findOneAndDelete({'_id':req.params.id})
