@@ -16,6 +16,9 @@ Legg inn pipeline status
 ## Kodestandard
 Prettier er ble brukt til å formatere koden, og ESlint ble brukt som linter. [Har dette skjedd?]
 
+[![Prettier](https://camo.githubusercontent.com/687a8ae8d15f9409617d2cc5a30292a884f6813a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636f64655f7374796c652d70726574746965722d6666363962342e7376673f7374796c653d666c61742d737175617265)](https://github.com/prettier/prettier-vscode#badge)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
 ## Screenshots
 #### Forside
 ![picture](Screenshots/forside.JPG)
