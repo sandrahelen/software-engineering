@@ -53,23 +53,29 @@ De viktigste funksjonene i systemet lar
 
 ## Eksempelkode
 
-```java
-const addCleaningItem = (newCleaningItem) => {
-       newCleaningList.push(newCleaningItem);
-       axios.put(`http://localhost:5000/api/vaskeliste/${cleaningList._id}`,
-           {
-               "liste": newCleaningList
-           }
-       )
-           .then(response => {
-               console.log(response)
-           })
-           .catch((error) => {
-               console.log(error);
-           })
-   };
+```javascript
+const dorm = useDormWithDormId(user.kollektiv);
+  const vaskelisteId = useCampusForStudentID(dorm.vaskeliste);
+  const { cleaningList } = useCleaningList(vaskelisteId);
+  const { users } = useUser(dorm._id);
 
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/api/user")
+      .then(response => {
+        if (response.data) {
+          let filteredUser = response.data.find(
+            user => user.username === username
+          );
+          setUser(filteredUser);
+        }
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }, [location]);
 ```
+
 ## Installasjon
 **For å kjøre prosjektet**
 - Installer [Node.js](https://nodejs.org)
