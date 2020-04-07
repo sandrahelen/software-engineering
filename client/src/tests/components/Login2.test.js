@@ -28,7 +28,7 @@ it("Tests correct rendering", () => {
     act( ()=> {
         render(<Login2 />,container);
     });
-    expect(container.textContent).toContain("Username: Password:");
+    expect(container.textContent).toContain("Brukernavn: Passord");
 });
 
 
