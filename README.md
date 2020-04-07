@@ -16,6 +16,7 @@ Gå til siden [her](https://sifvaskeliste.netlify.com/)
 * [Installasjon](#installasjon)
 * [Testing](#testing)
 * [Hvordan anvende produktet?](#hvordan-anvende-produktet)
+* [Bidra](#bidra)
 * [Team](#team)
 * [Lisens](#lisens)
 
