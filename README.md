@@ -1,5 +1,7 @@
+![picture](Screenshots/overskift.jpg)
 # SiF hybelvask
-Enkleste vei til din vaskeliste!
+
+Den enkleste vei til din vaskeliste!
 
 Gå til siden [her](https://sifvaskeliste.netlify.com/)
 
@@ -10,13 +12,12 @@ Det kan være vanskelig å holde oversikt over renholdet i en stor studentby. De
 
 
 ## Build Status
-Legg inn pipeline status
 
 [![pipeline status](https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48/badges/master/pipeline.svg)](https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48/-/commits/master)
 [![coverage report](https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48/badges/master/coverage.svg)](https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48/-/commits/master)
 
 ## Kodestandard
-Prettier er ble brukt til å formatere koden, og ESlint ble brukt som linter. [Har dette skjedd?]
+Prettier er ble brukt til å formatere koden, og ESlint ble brukt som linter.
 
 [![Prettier](https://camo.githubusercontent.com/687a8ae8d15f9409617d2cc5a30292a884f6813a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636f64655f7374796c652d70726574746965722d6666363962342e7376673f7374796c653d666c61742d737175617265)](https://github.com/prettier/prettier-vscode#badge)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
@@ -25,37 +26,32 @@ Prettier er ble brukt til å formatere koden, og ESlint ble brukt som linter. [H
 #### Forside
 ![picture](Screenshots/forside.JPG)
 
+#### Kollektiv View
+Som beboer kan man logge inn, se sitt kollektiv, vaskelisten, og huke av utførte oppgaver
+![picture](Screenshots/kollektivView.JPG)
 
 #### Admin View
 Når man logger inn som admin møter man denne siden:
 ![picture](Screenshots/adminview.JPG)
 
-
-#### Legge til kollektiv
-Som administrator kan man legge til kollektiv, og gi dette et nummer
-![picture](Screenshots/legg_til_kollektiv.JPG)
-
-#### Legge til kollektivmedlemmer
-En admin kan legge til kollektivmedlemmer, med brukernavn, fornavn og etternavn
-![picture](Screenshots/endre_kollektivmedlemmer.JPG)
-
-#### Endre vaskelisten
-I vinduet kan administratoren legge til eller fjerne oppgaver i vaskelisten
-![picture](Screenshots/endre_vaskeliste.JPG)
+Som administrator kan man administrere kollektivene, legge til nye, endre medlemmene, og redigere vaskelisten
+![picture](Screenshots/adminFunksjoner.jpg)
 
 
-## Teknologier og rammeverk
-- [React](https://reactjs.org) - Webrammeverk
-- [Node.js](https://nodejs.org/en/) - Runtime Environment
-- [Express](https://expressjs.com) - Webrammeverk
-- [MongoDB](https://www.mongodb.com) - Database
+## Teknologi og rammeverk
+- Brukergrensesnittet er bygget med ([React](https://reactjs.org/))
+- ([Node.js](https://nodejs.org/en/)) med ([Express](https://expressjs.com/)) brukes til backend
+- ([MongoDB](https://www.mongodb.com/)) brukes som databaseprogram
 
 ## Egenskaper
-Vaskesystemet er intuivt fra første møte, og har et enkelt og effektivt design. Alle funksjonene er lett tilgjengelig fra forsidene som møter beboere og administratorer.
+
+De viktigste funksjonene i systemet lar
+- En kollektiv-beboer logge seg inn å få oversikt over vaskelista i sitt kollektiv, og krysse av plikter som er utført
+- En administrator kan logge seg inn og administrere kollektivene og vaskelistene i sine studentbyer, og godkjenne vaskejobben. 
+
+**Hvorfor skiller vi oss ut?** SiFs vaskeside er intuivt fra første møte, og har et enkelt og effektivt design. Alle funksjonene er lett tilgjengelig fra forsidene som møter beboere og administratorer.
 
 ## Eksempelkode
-
-Lim gjerne inn noe annen kode
 
 ```java
 const addCleaningItem = (newCleaningItem) => {
@@ -74,7 +70,6 @@ const addCleaningItem = (newCleaningItem) => {
    };
 
 ```
-
 ## Installasjon
 **For å kjøre prosjektet**
 - Installer [Node.js](https://nodejs.org)
@@ -93,13 +88,15 @@ const addCleaningItem = (newCleaningItem) => {
    - Brukernavn: `fredrik`
    - Passord: `12345`
 
-**Alertnativt**
+
+**Alternativt**
 *  Gå inn på [https://sifvaskeliste.netlify.com/](https://sifvaskeliste.netlify.com/)
 
 ## Testing
 [![coverage report]]
 
-Kan noen skrive noe inn her?
+- Naviger til klient-mappa: `cd client`
+- Skriv inn kommandoen `npm test`
 
 ## Hvordan anvende produktet?
 Se [wiki](https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48/-/wikis/Brukermanual) for detaljert brukermanual om hvordan man anvender produktet
