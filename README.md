@@ -100,8 +100,32 @@ const dorm = useDormWithDormId(user.kollektiv);
 ## Testing
 [![coverage report](https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48/badges/master/coverage.svg)](https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48/-/commits/master)
 
+For å kjøre test 
 - Naviger til klient-mappa: `cd client`
 - Skriv inn kommandoen `npm test`
+
+####Eksempel på test-kode
+'''java
+jest.mock("axios");
+
+it("Checking for basic rendering", () => {
+
+    const resp = {
+        username: "Ole Jacob",
+        password: "passord",
+        _id: "5e74a81d9147430dda0229bd",
+        kollektiv: "5e738a947a41d64c7dd386cf",
+        fornavn: "test",
+        etternavn: "test"
+    }
+    axios.get.mockResolvedValue(resp);
+    const { result } = renderHook(() => useUser("5e738a947a41d64c7dd386cf"));
+    console.log(result.current);
+    expect(result).toBeDefined();
+});
+
+
+'''
 
 ## Hvordan anvende produktet?
 Se [wiki](https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48/-/wikis/Brukermanual) for detaljert brukermanual om hvordan man anvender produktet
