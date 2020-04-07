@@ -1,4 +1,4 @@
-![picture](Screenshots/overskift.jpg)
+![picture](Screenshots/overskrift.jpg)
 # SiF hybelvask
 
 Den enkleste vei til din vaskeliste!
