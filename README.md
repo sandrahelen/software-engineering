@@ -123,22 +123,31 @@ For å kjøre test
 #### Eksempel på test-kode
 
 ```java
-jest.mock("axios");
 
-it("Checking for basic rendering", () => {
+let container = null;
+beforeEach(() => {
+    // setup a DOM element as a render target
+    container = document.createElement("div");
+    document.body.appendChild(container);
+});
 
-    const resp = {
-        username: "Ole Jacob",
-        password: "passord",
-        _id: "5e74a81d9147430dda0229bd",
-        kollektiv: "5e738a947a41d64c7dd386cf",
-        fornavn: "test",
-        etternavn: "test"
-    }
-    axios.get.mockResolvedValue(resp);
-    const { result } = renderHook(() => useUser("5e738a947a41d64c7dd386cf"));
-    console.log(result.current);
-    expect(result).toBeDefined();
+afterEach(() => {
+    // cleanup on exiting
+    unmountComponentAtNode(container);
+    container.remove();
+    container = null;
+});
+
+it("Tests correct rendering", () => {
+
+    act( ()=> {
+        render(
+            <MemoryRouter>
+                <AdminView location="Lerkendal" />
+            </MemoryRouter>
+        ,container);
+    });
+    expect(container.textContent).toContain("Endre vaskeliste");
 });
 
 
