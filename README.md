@@ -156,6 +156,9 @@ it("Tests correct rendering", () => {
 ## Hvordan anvende produktet?
 Se [wiki](https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48/-/wikis/Brukermanual) for detaljert brukermanual om hvordan man anvender produktet
 
+## Bidra
+Vi vil gjerne ha alle tilbakemeldingene vi kan få! Derfor har vi laget en "Contributing Guide" for å gjøre 
+bidragsyting lettere. Du finner den her: [Contributing guide](CONTRIBUTING.md)
 
 ## Team
 - Edvard Dønvold Sjøborg
