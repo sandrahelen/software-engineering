@@ -70,26 +70,42 @@ router.post('/login', (req, res) => {
         })
 });
 
+<<<<<<< HEAD
 //Sletter brukeren med den IDen i databasen
+=======
+//Sletter en admin med gitt ID
+>>>>>>> 6eaf6842a9c4e3a4f66cfe8e549a2a3130d774ba
 router.delete('/:id', (req,res,next) => {
     Admin.findOneAndDelete({'_id':req.params.id})
         .then(data => res.json(data))
         .catch(next)
 });
+<<<<<<< HEAD
 //Henter alle brukere
+=======
+//Henter alle admin-objekter
+>>>>>>> 6eaf6842a9c4e3a4f66cfe8e549a2a3130d774ba
 router.get('/', (req, res, next) => {
     Admin.find()
         .then(data => res.json(data))
         .catch(next)
 });
 
+<<<<<<< HEAD
 //Henter brukeren med spesifisert ID
+=======
+//Henter admin med gitt ID
+>>>>>>> 6eaf6842a9c4e3a4f66cfe8e549a2a3130d774ba
 router.get('/:id', (req, res, next) => {
     Admin.find({"_id": req.params.id})
         .then(data => res.json(data))
         .catch(next)
 });
+<<<<<<< HEAD
 //Henter brukere med det brukernavnet
+=======
+//Henter admin med gitt brukernavn
+>>>>>>> 6eaf6842a9c4e3a4f66cfe8e549a2a3130d774ba
 router.get('/username/:username', (req, res, next) => {
     Admin.find({"username": req.params.username})
         .then(data => res.json(data))
