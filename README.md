@@ -5,7 +5,19 @@ Den enkleste vei til din vaskeliste!
 
 Gå til siden [her](https://sifvaskeliste.netlify.com/)
 
-Legg inn pipeline status og coverage report?
+## Innhold
+* [Motivasjon](#motivasjon)
+* [Build Status](#build-status)
+* [Kodestandard](#kodestandard)
+* [Egenskaper](#egenskaper)
+* [Screenshots](#screenshots)
+* [Teknologi og rammeverk](#teknologi-og-rammeverk)
+* [Eksempelkode](#eksempelkode)
+* [Installasjon](#installasjon)
+* [Testing](#testing)
+* [Hvordan anvende produktet?](#hvordan-anvende-produktet)
+* [Team](#team)
+* [Lisens](#lisens)
 
 ## Motivasjon
 Det kan være vanskelig å holde oversikt over renholdet i en stor studentby. Det gjelder både for beboere og adminstrasjonen. De manuelle papirarkene blir glemt eller forsvinner, og det er vanskelig å holde oversikt. Studentsamskipnaden i Fredrikstad er i sterk vekst, og trengte sårt en ny og bedre løsning! Vår intuive nettside, skal gjøre det lett for alle involverte å holde oversikt over vaskelisten. Ingen flere unnskyldninger for sluntre unna en god vask!
