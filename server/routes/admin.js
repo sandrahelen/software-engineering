@@ -13,9 +13,9 @@ router.post('/register', async(req, res) => {
 
     try {
 
-        const salt = await bcrypt.genSalt(10);
+        const salt = await bcrypt.genSalt(10); // Genererer tilfeldig data for å gjøre hashingen sikkrere
         if(!salt) throw Error("something wrong with salt");
-        const hash = await bcrypt.hash(password, salt);
+        const hash = await bcrypt.hash(password, salt); // Hasher passordet med den tidligere genererte saltet
         if(!hash) throw Error("something wrong with hash");
 
         const newUser = new Admin({
@@ -25,8 +25,10 @@ router.post('/register', async(req, res) => {
 
         const saveUser = await newUser.save();
 
-        const token = jwt.sign({id: saveUser._id}, config.get('jwtsecret'), {expiresIn: 3600});
+        // Generer et token med brukeren sin id som payload. Denne vil også utgå om en time
+        const token = jwt.sign({id: saveUser._id}, config.get('jwtsecret'), {expiresIn: 3600}); 
 
+        //Sender en 200 OK svar tilbake med nødvendig informasjon
         res.status(200).json({
             token,
             user: {
@@ -44,16 +46,18 @@ router.post('/login', (req, res) => {
 
     if(!username || !password) return res.status(400).json({msg: "Please enter all fields"});
 
-    Admin.findOne({ username })
+    Admin.findOne({ username }) //Finner en bruker i databasen med samme brukernavn
         .then( user => {
             if(!user) return res.status(400).json({msg: "User Does not exist"});
-
+            // Sammenligner passordet til brukeren i databasen med det passordet som er skrevet inn
             bcrypt.compare(password, user.password).then((result) =>{
                 if(result === false) return res.status(400).json({msg: "password does not match"});
 
+                //Generer et token i likhet med registreringen
                 const token = jwt.sign({ id: user._id }, config.get('jwtsecret'), { expiresIn: 3600 });
                 if (!token) throw Error('Couldnt sign the token');
 
+                //Sender OK svar tilbake hvis det ikke har skjedd en error enda
                 res.status(200).json({
                     token,
                     user: {
@@ -66,26 +70,30 @@ router.post('/login', (req, res) => {
         })
 });
 
-//Sletter en admin med gitt ID
+<<<<<<< HEAD
+=======
+
+>>>>>>> d376aa0fe8275af99aacb3a2599765e76b3ab064
+//Sletter brukeren med den IDen i databasen
 router.delete('/:id', (req,res,next) => {
     Admin.findOneAndDelete({'_id':req.params.id})
         .then(data => res.json(data))
         .catch(next)
 });
-//Henter alle admin-objekter
+//Henter alle brukere
 router.get('/', (req, res, next) => {
     Admin.find()
         .then(data => res.json(data))
         .catch(next)
 });
 
-//Henter admin med gitt ID
+//Henter brukeren med spesifisert ID
 router.get('/:id', (req, res, next) => {
     Admin.find({"_id": req.params.id})
         .then(data => res.json(data))
         .catch(next)
 });
-//Henter admin med gitt brukernavn
+//Henter brukere med det brukernavnet
 router.get('/username/:username', (req, res, next) => {
     Admin.find({"username": req.params.username})
         .then(data => res.json(data))
