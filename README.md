@@ -93,6 +93,7 @@ const addCleaningItem = (newCleaningItem) => {
 *  Gå inn på [https://sifvaskeliste.netlify.com/](https://sifvaskeliste.netlify.com/)
 
 ## Testing
+
 [![coverage report](https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48/badges/master/coverage.svg)](https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48/-/commits/master)
 
 For å kjøre test 
@@ -100,7 +101,8 @@ For å kjøre test
 - Skriv inn kommandoen `npm test`
 
 ####Eksempel på test-kode
-'''java
+
+```java
 jest.mock("axios");
 
 it("Checking for basic rendering", () => {
@@ -120,7 +122,7 @@ it("Checking for basic rendering", () => {
 });
 
 
-'''
+```
 
 ## Hvordan anvende produktet?
 Se [wiki](https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48/-/wikis/Brukermanual) for detaljert brukermanual om hvordan man anvender produktet
