@@ -6,14 +6,18 @@ stages:
 
 cache:
   paths:
-    - node_modules
+    - node_modules/
+    - client/node_modules/
+    - server/node_modules/
 install_dependencies:
   stage: build
   script:
-    - cd client && npm install
+    - npm install && cd client && npm install
   artifacts:
     paths:
       - node_modules
+      - client/node_modules/
+      - server/node_modules/
 testing_testing:
   stage: test
   script: cd client && npm test && a
