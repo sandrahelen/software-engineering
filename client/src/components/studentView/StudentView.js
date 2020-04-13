@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import CleaningList from "./cleaningList/CleaningList";
 import queryString from "query-string";
 import axios from "axios";
+import "./studentView.css";
 
 const StudentView = ({ location }) => {
   const { username } = queryString.parse(location.search);

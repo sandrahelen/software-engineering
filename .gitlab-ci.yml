@@ -20,4 +20,4 @@ install_dependencies:
       - server/node_modules/
 testing_testing:
   stage: test
-  script: cd client && npm test && a
+  script: cd client && npm test

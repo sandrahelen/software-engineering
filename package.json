@@ -2,9 +2,5 @@
   "scripts": {
     "start": "cd server && npm start",
     "heroku-prebuild": "cd server && npm install && npm run build"
-  },
-  "dependencies": {
-    "react-split-pane": "^0.1.89",
-    "react-scripts": "3.3.1"
   }
 }
