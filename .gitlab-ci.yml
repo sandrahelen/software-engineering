@@ -10,7 +10,7 @@ cache:
 install_dependencies:
   stage: build
   script:
-    - npm install
+    - cd client && npm install
   artifacts:
     paths:
       - node_modules
