@@ -1,7 +1,7 @@
 import { unmountComponentAtNode, render } from "react-dom";
 import React, { Component } from "react";
 import { act } from "react-dom/test-utils";
-import AdminView from "../../../components/AdminView/AdminView";
+import AdminView from "../../../components/adminView/AdminView";
 import { MemoryRouter } from "react-router-dom";
 
 let container = null;
