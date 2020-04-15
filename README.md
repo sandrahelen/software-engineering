@@ -159,9 +159,9 @@ it("Tests correct rendering", () => {
 Se [wiki](https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48/-/wikis/Brukermanual) for detaljert brukermanual om hvordan man anvender produktet
 
 ## Bidra
-Produktet skal i første omgang outsources til at annet team. 
+Produktet skal i første omgang outsources til et annet team. 
 
-Om de i fremtiden skulle ønske open source, har vi satt opp et contributing guide, som skal gjøre bidragsyting lettere.  Du finner den her: [Contributing guide](CONTRIBUTING.md)
+Om de i fremtiden skulle ønske open source, har vi satt opp en contributing guide, som skal gjøre bidragsyting lettere.  Du finner den her: [Contributing guide](CONTRIBUTING.md)
 
 ## Team
 - Edvard Dønvold Sjøborg
