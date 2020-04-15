@@ -116,6 +116,7 @@ const dorm = useDormWithDormId(user.kollektiv);
 ## Testing
 
 [![coverage report](https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48/badges/master/coverage.svg)](https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48/-/commits/master)
+Testdekning: 39,54%
 
 For å kjøre test 
 - Naviger til klient-mappa: `cd client`
