@@ -31,6 +31,7 @@ it("Basic test for correct rendering", () => {
     }
     axios.get.mockImplementation(() => Promise.resolve(resp));
     const { result } = renderHook(() =>  useAdmin("5e568071e3d8c229f4d9ae87"));
+    console.log(result.current)
     expect(result).toBeDefined();
 });
 

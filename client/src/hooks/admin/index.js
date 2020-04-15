@@ -16,7 +16,7 @@ export const useAdmin = (adminId) => {
             .catch((error) => {
                 console.log(error);
             })
-    }, [campusId]);
-    return { dorms, setDorms };
+    }, [adminId]);
+    return { admin, setAdmin };
 }
 
