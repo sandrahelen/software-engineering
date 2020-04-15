@@ -61,9 +61,9 @@ Som administrator kan man administrere kollektivene, legge til nye, endre medlem
 
 
 ## Teknologi og rammeverk
-- Brukergrensesnittet er bygget med ([React](https://reactjs.org/))
-- ([Node.js](https://nodejs.org/en/)) med ([Express](https://expressjs.com/)) brukes til backend
-- ([MongoDB](https://www.mongodb.com/)) brukes som databaseprogram
+- Brukergrensesnittet er bygget med [React](https://reactjs.org/)
+- [Node.js](https://nodejs.org/en/) med [Express](https://expressjs.com/) brukes til backend
+- [MongoDB](https://www.mongodb.com/) brukes som databaseprogram
 
 
 ## Eksempelkode
