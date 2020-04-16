@@ -115,7 +115,6 @@ const dorm = useDormWithDormId(user.kollektiv);
 
 ## Testing
 
-[![coverage report](https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48/badges/master/coverage.svg)](https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48/-/commits/master)
 Testdekning: 39,54%
 
 Se [wiki](https://gitlab.stud.idi.ntnu.no/tdt4140-2020/48/-/wikis/Oversikt-over-kodekvalitet) for detaljer om testdekning.
